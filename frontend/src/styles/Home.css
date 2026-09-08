@@ -16,6 +16,7 @@ html {
 .hero-content { max-width: 850px; }
 
 .hero-title {
+  text-align: left;
   margin: 0;
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(4rem, 8vw, 8rem);
