@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HealthAssessmentForm from "../components/health/healthAssessmentForm/HealthAssessmentForm";
+import HealthAssessmentForm from "../components/health/HealthAssessmentForm/HealthAssessmentForm";
 import HealthOverview from "../components/health/HealthOverview/HealthOverview";
 import "../styles/health.css";
 

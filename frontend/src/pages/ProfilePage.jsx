@@ -5,7 +5,7 @@ import EmptyProfile from "../components/profile/EmptyProfile";
 import ProfileForm from "../components/profile/ProfileForm";
 
 import profileService from "../services/profileService";
-import "../styles/profile/profile.css"; // Ensure this path matches your structure
+import "../styles/profile/Profile.css"; // Ensure this path matches your structure
 import LoadingSkeleton from "../components/skeleton/LoadingSkeleton/LoadingSkeleton";
 
 const ProfilePage = () => {

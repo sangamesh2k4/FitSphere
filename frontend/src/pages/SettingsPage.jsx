@@ -1,5 +1,4 @@
-import SettingsView from "../components/settings/SettingsView";
-
+import SettingsView from "../components/Settings/SettingsView";
 function SettingsPage() {
     return <SettingsView />;
 }

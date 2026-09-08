@@ -4,7 +4,7 @@ import FoodCard from "../components/nutrition/FoodCard/FoodCard";
 import ExerciseCard from "../components/exercises/ExerciseCard";
 import ExerciseCardSkeleton from "../components/skeleton/ExerciseCardSkeleton";
 import FoodCardSkeleton from "../components/skeleton/FoodCardSkeleton";
-import "../styles/favorites/favorites.css";
+import "../styles/Favorites/Favorites.css";
 
 function FavoritesPage() {
     const [activeTab, setActiveTab] = useState("exercises");

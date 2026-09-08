@@ -8,7 +8,7 @@ import ForgotPassword from "../auth/ForgotPassword";
 import VerifyResetOtp from "../auth/VerifyResetOtp";
 import ResetPassword from "../auth/ResetPassword";
 
-import "../../css/AuthPage.css";
+import "../../styles/auth/Auth.css";
 
 function AuthPage() {
     const location = useLocation();
