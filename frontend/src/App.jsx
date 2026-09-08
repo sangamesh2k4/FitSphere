@@ -18,7 +18,7 @@ import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import FoodDetail from "./pages/FoodDetail";
-import WorkoutPage from "./pages/Workouts/Workouts";
+import WorkoutPage from "./pages/workouts/Workouts";
 import WorkoutSummary from "./pages/workouts/WorkoutSummary";
 import ActiveWorkout from "./pages/workouts/ActiveWorkout";
 import WorkoutDetails from "./components/workouts/WorkoutDetails/WorkoutDetails";
@@ -43,7 +43,7 @@ import MacroTracker from './pages/MacroTracker'
 // Route Guards
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminRoute from "./routes/AdminRoute";
-import PublicRoute from "./routes/PublicRoute";
+import PublicRoute from "./routes/publicRoute";
 import AuthPage from "./pages/auth/AuthPage";
 
 function App() {
