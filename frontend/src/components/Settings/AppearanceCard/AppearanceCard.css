@@ -1,0 +1,60 @@
+/* AppearanceCard.css */
+
+.appearance-card {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    overflow: hidden;
+    
+}
+
+.appearance-header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem;
+    color: inherit;
+}
+
+.appearance-header h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+}
+
+.appearance-content {
+    /* Matches the expanded padding of settings-card-content */
+    padding: 0 1.6rem 1.6rem;
+}
+
+.appearance-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.theme-option {
+    flex: 1;
+    padding: 1rem;
+    background: var(--fs-surface-2);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    color: var(--fs-text);
+    font-size: 1.8rem;
+    transition: 0.25s;
+    font-size: 1rem;
+}
+
+.theme-option:hover {
+    border-color: var(--fs-gold);
+}
+
+.theme-option.active {
+    border: 2px solid var(--fs-gold);
+    background: var(--fs-gold-bg, rgba(212, 175, 55, 0.1)); /* Added fallback rgba just in case */
+}

@@ -1,0 +1,221 @@
+/* =========================================================
+   NUTRITION PAGE LAYOUT
+========================================================= */
+
+.nutrition-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nutrition-header h1 {
+    margin: 0;
+    color: var(--fs-text);
+    font-size: 2rem;
+}
+
+.nutrition-header p {
+    margin-top: .4rem;
+    color: var(--fs-muted);
+}
+
+
+/* =========================================================
+   NUTRITION CONTENT WRAPPER
+========================================================= */
+
+.nutrition-page-wrapper {
+    position: relative;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PROFILE OVERLAY
+========================================================= */
+
+.nutrition-profile-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+/* =========================================================
+   PROFILE MODAL
+========================================================= */
+
+.nutrition-profile-modal {
+    width: min(420px, 100%);
+
+    padding: 2rem;
+    margin-bottom: 400px;
+    text-align: center;
+
+    background-color: var(--fs-surface);
+
+    border: 1px solid var(--fs-border);
+    border-radius: 10px;
+
+    box-shadow: var(--fs-shadow);
+}
+
+
+/* =========================================================
+   PROFILE ICON
+========================================================= */
+
+.nutrition-profile-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--fs-gold-bg);
+    color: var(--fs-gold);
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   PROFILE TEXT
+========================================================= */
+
+.nutrition-profile-modal h2 {
+    margin: 0 0 0.75rem;
+
+    color: var(--fs-text);
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nutrition-profile-modal p {
+    margin: 0 auto 1.5rem;
+
+    max-width: 340px;
+
+    color: var(--fs-muted);
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   COMPLETE PROFILE BUTTON
+========================================================= */
+
+.nutrition-profile-primary {
+    width: 100%;
+
+    padding: 0.8rem 1rem;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: var(--fs-gold);
+    color: var(--fs-bg);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nutrition-profile-primary:hover {
+    background-color: var(--fs-gold-dim);
+}
+
+.nutrition-profile-primary:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   MAYBE LATER
+========================================================= */
+
+.nutrition-profile-secondary {
+    margin-top: 0.9rem;
+
+    border: none;
+
+    background-color: transparent;
+
+    color: var(--fs-muted);
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.nutrition-profile-secondary:hover {
+    color: var(--fs-text);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .nutrition-profile-overlay {
+        padding: 0.75rem;
+    }
+
+    .nutrition-profile-modal {
+        width: 100%;
+        max-width: 360px;
+        margin-bottom: 450px;
+        padding: 1.75rem 1.5rem;
+    }
+
+    .nutrition-profile-icon {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 1rem;
+    }
+
+    .nutrition-profile-modal h2 {
+        font-size: 1.25rem;
+    }
+
+    .nutrition-profile-modal p {
+        font-size: 0.85rem;
+    }
+}

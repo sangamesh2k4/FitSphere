@@ -1,0 +1,416 @@
+/* ── PAGE LAYOUT ── */
+.admin-users-page {
+  /* max-width: 900px; */
+  margin: 0 auto;
+  padding: 1.5rem 0.5rem 5rem 0.5rem;
+  color: var(--fs-text);
+  font-family: 'Inter', sans-serif;
+}
+
+.admin-users-loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--fs-muted);
+  font-size: 1rem;
+}
+
+/* ── HEADER SECTION ── */
+.admin-users-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-users-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0 0 0.1rem 0;
+  color: var(--fs-text);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.admin-users-header p {
+  color: var(--fs-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ── CONTROLS PANEL ── */
+.admin-users-controls {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: var(--fs-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.admin-search-wrapper {
+  margin-bottom: 0.75rem;
+}
+
+.admin-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--fs-text);
+  outline: none;
+}
+
+.admin-search-input:focus {
+  border-color: var(--fs-gold);
+}
+
+.admin-search-input::placeholder {
+  color: var(--fs-muted);
+}
+
+.admin-filters-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+/* ── USERS COUNT HEADER ── */
+.admin-users-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fs-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  padding-left: 0.2rem;
+}
+
+/* ── USERS GRID ── */
+.admin-users-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .admin-users-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── USER CARD ── */
+.admin-user-card {
+  background-color: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-sizing: border-box;
+  box-shadow: var(--fs-shadow);
+  transition: border-color 0.2s ease;
+}
+
+.admin-user-card:hover {
+  border-color: var(--fs-gold);
+}
+
+@media (min-width: 600px) {
+  .admin-user-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Primary User Info */
+.admin-user-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-user-text {
+  min-width: 0;
+}
+
+.admin-user-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--fs-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-user-email {
+  font-size: 0.8rem;
+  color: var(--fs-muted);
+  margin: 0.15rem 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Badges & Meta Section */
+.admin-user-meta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.admin-user-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.admin-user-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.725rem;
+  font-weight: 600;
+}
+
+.admin-user-role.role-admin {
+  color: var(--fs-gold);
+}
+
+.admin-user-role.role-user {
+  color: var(--fs-muted);
+}
+
+.admin-user-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-user-status.active {
+  color: var(--fs-green);
+}
+
+.admin-user-status.disabled {
+  color: var(--fs-red-text);
+}
+
+/* Responsive Status Toggles */
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* ── ACTION BUTTONS ── */
+.admin-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.admin-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-action-btn.power-btn {
+  color: var(--fs-muted);
+}
+
+.admin-action-btn.power-btn:hover {
+  border-color: var(--fs-gold);
+  color: var(--fs-gold);
+}
+
+.admin-action-btn.delete-btn {
+  color: var(--fs-red-text);
+  border-color: var(--fs-red);
+  background-color: var(--fs-red-bg);
+}
+
+.admin-action-btn.delete-btn:hover {
+  background-color: var(--fs-red);
+  color: #ffffff;
+}
+
+/* ── CONFIRMATION MODAL ── */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.admin-modal {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--fs-shadow);
+  color: var(--fs-text);
+  animation: modalScale 0.2s ease-out;
+}
+
+.admin-modal h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--fs-text);
+}
+
+.admin-modal p {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--fs-muted);
+  line-height: 1.4;
+}
+
+.admin-modal p strong {
+  color: var(--fs-text);
+}
+
+.admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.admin-btn-cancel {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--fs-border);
+  background: var(--fs-surface-2);
+  color: var(--fs-text);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-btn-cancel:hover {
+  border-color: var(--fs-gold);
+}
+
+.admin-btn-delete {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--fs-red);
+  background: var(--fs-red-bg);
+  color: var(--fs-red-text);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-btn-delete:hover {
+  background: var(--fs-red);
+  color: #ffffff;
+}
+
+@keyframes modalScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── SNACKBAR TOAST BANNER ── */
+.admin-snackbar {
+  position: fixed;
+  bottom: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+  color: var(--fs-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: var(--fs-shadow);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  animation: snackbarSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admin-snackbar-text {
+  color: var(--fs-text);
+}
+
+.admin-snackbar-text strong {
+  color: var(--fs-gold);
+}
+
+.admin-snackbar-undo {
+  background: transparent;
+  border: none;
+  color: var(--fs-gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.admin-snackbar-undo:hover {
+  color: var(--fs-gold-dim);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes snackbarSlideUp {
+  from {
+    transform: translate(-50%, 1.5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}

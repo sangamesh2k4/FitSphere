@@ -1,0 +1,80 @@
+/* =========================================
+   HEALTH ASSESSMENT - MAIN LAYOUT & HEADER
+========================================= */
+
+.health-assessment {
+  min-height: 90vh;
+  background: var(--fs-bg);
+  color: var(--fs-text);
+  box-sizing: border-box;
+  margin: 0 auto;
+  
+  /* Smooth transitions for theme switching */
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* --- INTEGRATED HEADER SECTION --- */
+.health-header {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: center; 
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px; 
+}
+
+/* The "HEALTH TOOLS" overline badge (Matches .section-label) */
+.health-badge {
+  color: var(--fs-gold); 
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem; /* Matched perfectly */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  
+  /* Flex for icon alignment */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* The "HEALTH ASSESSMENT" Title (Matches h1) */
+.health-title {
+  color: var(--fs-text);
+  font-size: 5rem; /* Increased from 3.0rem */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em; 
+  margin: 0 0 0.75rem 0; /* Exact margin match */
+}
+
+/* The descriptive paragraph (Matches p) */
+.health-subtitle {
+      color: var(--fs-muted);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+/* --- MOBILE RESPONSIVE (TABLET & PHONE) --- */
+@media (max-width: 768px) {
+  .health-assessment {
+    padding: 1.5rem 1rem 4rem;
+  }
+
+  .health-header {
+    margin-bottom: 2rem;
+  }
+  
+  .health-title {
+    font-size: 2.5rem; /* Matched mobile font size */
+    margin-top: -1.7rem; /* Added the exact negative margin you used in the exercise library mobile query */
+  }
+
+  .health-subtitle {
+    font-size: 1.1rem; /* Matched mobile font size */
+  }
+}

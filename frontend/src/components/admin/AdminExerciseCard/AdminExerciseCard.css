@@ -1,0 +1,200 @@
+/* ── LIST CONTAINER GRID ── */
+.admin-list-container {
+    display: grid;
+    /* Mobile: 1 card per row */
+    grid-template-columns: 1fr; 
+    gap: 0.65rem;
+    /* max-width: 900px; Constrains total grid width for compact desktop cards */
+    margin: 0 auto;
+}
+
+/* Laptop & Desktop: 2 cards per row */
+@media (min-width: 768px) {
+    .admin-list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── EXERCISE CARD ── */
+.admin-exercise-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 64px;
+    padding: 8px 12px;
+    gap: 10px;
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    background: var(--fs-surface);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    overflow: hidden; /* Prevents overflow spikes */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-exercise-card:hover {
+    border-color: var(--fs-gold, #c2822a);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Section: Image + Title */
+.admin-exercise-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0; /* CRITICAL: Allows flex child text truncation */
+    flex: 1 1 0%;
+}
+
+.admin-exercise-image {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--fs-background);
+}
+
+.admin-exercise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.admin-exercise-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--fs-background);
+}
+
+.admin-exercise-name {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--fs-text);
+    min-width: 0;
+    
+    /* WebKit Box Flow Truncation (Up to 2 lines before '...') */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+/* Right Section: Category + Status Pill + Actions */
+.admin-exercise-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduced from 20px so elements fit on mobile screens */
+    flex-shrink: 0;
+}
+
+.admin-exercise-category {
+    font-size: 0.775rem;
+    font-weight: 500;
+    color: var(--fs-muted);
+    max-width: 65px; /* Keeps category width bounded */
+    text-align: right;
+    
+    /* WebKit Single-Line Truncation */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Status Pill */
+.admin-exercise-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.725rem;
+    font-weight: 600;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.admin-exercise-status.active {
+    background: var(--fs-background);
+    color: var(--fs-success);
+}
+
+.admin-exercise-status.disabled {
+    background: var(--fs-background);
+    color: var(--fs-muted);
+}
+
+/* Action Buttons */
+.admin-exercise-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0; /* Action buttons will never be squished */
+}
+
+.admin-exercise-action {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    background: var(--fs-surface);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.admin-exercise-action.edit-btn {
+    color: var(--fs-text);
+}
+
+.admin-exercise-action.edit-btn:hover {
+    border-color: var(--fs-text);
+    background: var(--fs-background);
+}
+
+.admin-exercise-action.power-btn {
+    color: var(--fs-danger);
+}
+
+.admin-exercise-action.power-btn:hover {
+    border-color: var(--fs-danger);
+    background: var(--fs-background);
+}
+
+/* ── SMALL MOBILE SCREEN OPTIMIZATION ── */
+@media (max-width: 480px) {
+    .admin-exercise-card {
+        padding: 6px 8px;
+        gap: 6px;
+    }
+
+    .admin-exercise-right {
+        gap: 6px;
+    }
+
+    .admin-exercise-category {
+        max-width: 50px;
+        font-size: 0.725rem;
+    }
+
+    .admin-exercise-status {
+        padding: 2px 8px;
+        font-size: 0.7rem;
+    }
+
+    .admin-exercise-action {
+        width: 28px;
+        height: 28px;
+    }
+}

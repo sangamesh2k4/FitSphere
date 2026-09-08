@@ -1,0 +1,90 @@
+/* ==========================================
+   APP LAYOUT & CONTENT (Desktop / Global)
+========================================== */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--fs-bg);
+}
+
+.app-content {
+    flex: 1;
+    overflow:visible;
+    padding: 5px 5px 8px 8px; /* Generous padding for desktop */
+}
+
+.mobile-header {
+    display: none; /* Hidden on desktop */
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+/* ==========================================
+   MOBILE ONLY LAYOUT & NAVIGATION (<= 768px)
+========================================== */
+@media (max-width: 768px) {
+    
+    .app-layout {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: var(--fs-bg);
+        overflow: visible; /* Required for child sticky headers */
+    }
+
+    .app-content {
+        flex: 1;
+        overflow: visible;
+        padding: 5px 5px 8px 5px;
+    }
+
+    .mobile-header {
+        display: grid;
+        grid-template-columns: 48px 1fr 48px;
+        align-items: center;
+        min-height: 60px;
+        padding: 0 16px;
+        background: var(--fs-surface);
+        border-bottom: 1px solid var(--fs-border);
+        position: sticky;
+        top: 0;
+        z-index: 99;
+    }
+
+    .mobile-header h2 {
+        margin: 0;
+        font-family: "Bebas Neue", sans-serif;
+        text-align: center;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        color: var(--fs-gold);
+    }
+
+    .menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: var(--fs-text);
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 8px;
+        margin-left: -8px;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1000;
+    }
+}

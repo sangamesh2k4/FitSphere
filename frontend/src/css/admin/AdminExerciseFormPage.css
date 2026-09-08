@@ -1,0 +1,21 @@
+.admin-exercise-form-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.admin-exercise-form-page-header button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  color: var(--fs-muted);
+  font-size: 1.25rem;
+  text-align: center;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.admin-exercise-form-page-header button:hover {
+  color: var(--fs-gold);
+}

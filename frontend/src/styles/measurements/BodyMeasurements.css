@@ -1,0 +1,59 @@
+/* =========================================
+   BODY MEASUREMENTS (MAIN PAGE LAYOUT)
+========================================= */
+
+.measurements-page {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Consistent vertical spacing between all section components */
+  box-sizing: border-box;
+  color: var(--fs-text);
+}
+
+/* Force all top-level section components to span full container width */
+.measurements-page > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LOADING STATE
+========================================= */
+
+.measurements-loading {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  color: var(--fs-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT (TABLET & MOBILE)
+========================================= */
+
+@media (max-width: 768px) {
+  .measurements-page {
+    padding: 1.25rem 1rem;
+    gap: 1.5rem; /* Tighter vertical spacing on mobile screens */
+  }
+
+  .measurements-loading {
+    min-height: 250px;
+    font-size: 0.875rem;
+    margin: 1.25rem auto;
+  }
+}

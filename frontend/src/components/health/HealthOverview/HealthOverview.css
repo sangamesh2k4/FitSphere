@@ -1,0 +1,58 @@
+/* =========================================================
+   HEALTH OVERVIEW (MAIN DASHBOARD LAYOUT)
+========================================================= */
+
+.health-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Row Containers */
+.health-overview-row {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+.health-overview-row.top-row {
+    align-items: stretch;
+}
+
+.health-overview-row.bottom-row {
+    align-items: center;
+}
+
+/* Combined Calories & Macros Container */
+.calories-macro-block {
+    background: var(--fs-bg);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Seamless inner borders for Calories + Macros block */
+.calories-macro-block .calories-card,
+.calories-macro-block .macro-card {
+    border: none;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.calories-macro-block .macro-card {
+    border-top: 1px solid var(--fs-border);
+}
+
+/* Responsive design for tablets and mobile screens */
+@media (max-width: 768px) {
+    .health-overview-row {
+        flex-direction: column;
+    }
+
+    .health-overview-row.top-row .health-score-card {
+        width: 100%;
+    }
+}

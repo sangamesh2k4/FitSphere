@@ -1,0 +1,140 @@
+/* =========================================================
+   MACRO TRACKER (MAIN LAYOUT)
+========================================================= */
+
+/* Main wrapper */
+.macro-tracker-page {
+    width: 100%;
+    margin: 0 auto;
+
+    color: var(--fs-text); /* Updated to use global text color */
+    
+    /* Ensures everything (like the header) flows in a column and centers nicely */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Make sure the child components take up full width */
+.macro-tracker-page > * {
+    width: 100%;
+}
+
+.macro-error {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--fs-red-bg); /* Using global red bg */
+    border: 1px solid var(--fs-red); /* Using global red */
+    border-radius: 8px;
+    color: var(--fs-red-text); /* Using global red text */
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+/* =========================================================
+   GRID LAYOUT (LEFT LIST & RIGHT DETAILS)
+========================================================= */
+
+.macro-content-grid {
+    display: grid;
+    /* Increased right column width from 420px to 460px to fix horizontal overflow */
+    grid-template-columns: 1fr 460px; 
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: start; 
+}
+
+/* =========================================================
+   RIGHT COLUMN WRAPPER (STICKY & SCROLLABLE FIX)
+========================================================= */
+
+.macro-detail-column {
+    /* 1. Makes the entire right column follow the screen when scrolling */
+    position: sticky;
+    top: 2rem;
+    
+    /* 2. Allows the card to scroll internally if it gets too tall for smaller screens */
+    height: fit-content;
+    max-height: calc(100vh - 4rem); 
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    /* Optional: Hides the inner scrollbar for a cleaner look */
+    scrollbar-width: none; 
+}
+
+.macro-detail-column::-webkit-scrollbar {
+    display: none;
+}
+
+/* =========================================================
+   EMPTY STATE / PLACEHOLDER (DIMMER DESIGN)
+========================================================= */
+
+.macro-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Replaced massive viewport height with a sensible card height */
+    min-height: 320px; 
+    height: auto;
+    
+    /* Dim, theme-appropriate background and border */
+    background: var(--fs-surface);
+    border: 1px dashed var(--fs-border);
+    border-radius: 16px;
+    
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.placeholder-content {
+    max-width: 280px;
+}
+
+.placeholder-content h3 {
+    margin: 0 0 0.5rem;
+    color: var(--fs-muted); /* Updated to global muted color */
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.placeholder-content p {
+    margin: 0;
+    color: var(--fs-subtle); /* Updated to global subtle color */
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   SCROLL TARGETS
+========================================================= */
+
+.macro-calculator-scroll-target,
+.macro-result-scroll-target {
+    scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (MOBILE / TABLET)
+========================================================= */
+
+@media (max-width: 992px) {
+    .macro-content-grid {
+        /* Stacks the grid into a single column on smaller screens */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .macro-detail-column {
+        /* Disables sticky behavior on mobile where elements stack vertically */
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .macro-placeholder {
+        display: none; /* Hide placeholder on mobile to save space */
+    }
+}

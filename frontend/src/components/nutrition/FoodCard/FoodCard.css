@@ -1,0 +1,132 @@
+/* ==========================================
+   Food Card Styles (FoodCard.css)
+========================================== */
+
+.food-card {
+    display: flex;
+    align-items: flex-start; /* Aligns card body and actions to the top */
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 14px;
+    transition: .25s;
+    width: 100%;
+    text-align: left;
+}
+
+.food-card-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    cursor: pointer;
+}
+
+.food-card:hover:not(.disabled) {
+    border-color: var(--fs-gold);
+    transform: translateY(-2px);
+}
+
+.food-card.selected {
+    border: 2px solid var(--fs-gold);
+    background: var(--fs-surface-2);
+    transform: translateY(-2px);
+}
+
+.food-card.disabled {
+    opacity: 0.6;
+}
+
+.food-card.disabled .food-card-body {
+    cursor: not-allowed;
+}
+
+.food-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(240, 180, 41, .08);
+    color: var(--fs-gold);
+    flex-shrink: 0;
+}
+
+.food-card-info {
+    flex: 1;
+}
+
+.food-card-name {
+    overflow: hidden;
+    line-height: 1.35;
+    min-height: 2.8rem;
+    color: var(--fs-text);
+    font-weight: 700;
+}
+
+.food-card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .6rem;
+    color: var(--fs-muted);
+    font-size: .85rem;
+}
+
+.food-detail-item {
+    display: flex;
+    gap: .35rem;
+}
+
+.food-detail-label {
+    text-transform: uppercase;
+    font-size: .75rem;
+    opacity: .7;
+}
+
+.food-detail-value {
+    color: var(--fs-text);
+}
+
+/* Actions Container pinned to the top right */
+.food-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .75rem;
+    color: var(--fs-muted);
+    transition: .2s;
+    flex-shrink: 0;
+}
+
+.food-card:hover:not(.disabled) .food-card-actions {
+    color: var(--fs-gold);
+}
+
+/* Favorite Button Styles */
+.favorite-button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--fs-muted);
+    transition: .25s;
+}
+
+.favorite-button:hover {
+    color: var(--fs-gold);
+    background: var(--fs-gold-bg, rgba(240, 180, 41, .08));
+}
+
+.favorite-button.active {
+    color: #ef4444;
+}

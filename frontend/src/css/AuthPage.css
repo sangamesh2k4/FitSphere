@@ -1,0 +1,229 @@
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("../../public/assets/auth-desktop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Darkens the photograph without affecting the card */
+/* Kept as rgba since gradient overlays over photos usually require custom opacities */
+.auth-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.55)
+        );
+}
+
+.auth-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: var(--fs-spacing-xxl, 40px) 8%;
+}
+
+/* ================================
+   BRAND
+================================ */
+
+.auth-brand {
+    position: absolute;
+
+    left: 8%;
+    top: 8%;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+
+    color: var(--fs-gold);
+}
+
+/* ================================
+   PANEL
+================================ */
+
+.auth-panel {
+    width: min(430px, 100%);
+
+    /* Mixes 50% of your surface color with transparent */
+    background: color-mix(in srgb, var(--fs-surface-dark, #141414) 50%, transparent);
+    border: 1px solid var(--fs-border-dark, rgba(255, 255, 255, 0.08));
+    border-radius: var(--fs-radius-lg, 18px);
+    
+    padding: var(--fs-spacing-lg, 24px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+
+    /* Glassmorphism blur (added -webkit prefix for Safari support) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* ================================
+   LOGIN / SIGNUP SWITCH
+================================ */
+
+.auth-switch {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    height: 48px;
+
+    padding: var(--fs-spacing-xs, 4px);
+    margin-bottom: var(--fs-spacing-xl, 28px);
+
+    border-radius: var(--fs-radius-full, 999px);
+
+    background: var(--fs-surface-hover, rgba(255, 255, 255, 0.07));
+}
+
+.auth-switch-indicator {
+    position: absolute;
+
+    top: var(--fs-spacing-xs, 4px);
+    left: var(--fs-spacing-xs, 4px);
+
+    width: calc(50% - var(--fs-spacing-xs, 4px));
+    height: calc(100% - (var(--fs-spacing-xs, 4px) * 2));
+
+    border-radius: var(--fs-radius-full, 999px);
+
+    background: var(--fs-gold);
+
+    transition: transform 0.25s ease;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.auth-switch-indicator.register {
+    transform: translateX(100%);
+}
+
+.auth-switch button {
+    position: relative;
+    z-index: 1;
+
+    border: none;
+    background: transparent;
+
+    color: var(--fs-text-secondary, rgba(255, 255, 255, 0.65));
+
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    border-radius: var(--fs-radius-full, 999px);
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.auth-switch button.active {
+    /* Dark color for contrast against the gold indicator */
+    color: var(--fs-bg-dark, #111);
+}
+
+.auth-switch button:hover {
+    transform: translateY(-1px);
+}
+
+/* ================================
+   EXISTING AUTH CARD
+================================ */
+
+.auth-form-container .auth-card {
+    width: 100%;
+    max-width: none;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    border-radius: 0;
+}
+
+.auth-form-container .auth-card > .close-modal {
+    display: none;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .auth-page {
+        background-image: url("../../public/assets/auth-mobile.png");
+        background-position: center;
+    }
+
+    .auth-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.7)
+            );
+    }
+
+    .auth-content {
+        min-height: 100vh;
+
+        align-items: flex-end;
+        justify-content: center;
+
+        /* Replaced hardcoded values with appropriate spacing tokens */
+        padding: var(--fs-spacing-lg, 20px) var(--fs-spacing-md, 14px) var(--fs-spacing-xl, 85px);
+    }
+
+    .auth-brand {
+        top: 5%;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        font-size: 2rem;
+    }
+
+    .auth-panel {
+        width: 100%;
+
+        padding: var(--fs-spacing-lg, 20px);
+
+        border-radius: var(--fs-radius-md, 16px);
+    }
+
+    .auth-switch {
+        margin-bottom: var(--fs-spacing-lg, 22px);
+    }
+}

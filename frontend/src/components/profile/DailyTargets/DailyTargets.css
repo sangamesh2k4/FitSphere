@@ -1,0 +1,26 @@
+.daily-targets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.daily-targets-header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.daily-targets-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.daily-targets-header p {
+    color: var(--fs-text-secondary);
+}
+
+.daily-targets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}

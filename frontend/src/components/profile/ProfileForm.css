@@ -1,0 +1,312 @@
+/* ===========================
+   Profile Form (Full Screen Layout)
+=========================== */
+
+.profile-form {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 24px;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.profile-form h2 {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: var(--fs-gold);
+    text-align: center;
+}
+
+.form-subtitle {
+    margin-top: -1.5rem;
+    font-size: 1.1rem;
+    color: var(--fs-muted);
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-section h3 {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    color: var(--fs-text);
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    color: var(--fs-text);
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--fs-text);
+
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--fs-muted);
+    opacity: 0.6;
+}
+
+.form-group input:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--fs-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hide browser number arrows */
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/* ===========================
+   Selection Cards (Grid & Highlight)
+=========================== */
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.selection-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px; 
+    
+    padding: 20px 24px;
+    min-height: 100px; 
+    
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    
+    color: var(--fs-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.selection-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Selection Highlight */
+.selection-card.active,
+.selection-card.selected {
+    border-color: var(--fs-gold);
+    background: rgba(212, 175, 55, 0.08); 
+    box-shadow: 0 0 0 1px var(--fs-gold); 
+}
+
+/* Card Text Hierarchy & Gap Fixes */
+.selection-card .card-title {
+    margin: 0; 
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    color: var(--fs-text);
+    transition: color 0.2s ease;
+}
+
+.selection-card.active .card-title,
+.selection-card.selected .card-title {
+    color: var(--fs-gold);
+}
+
+.selection-card .card-desc {
+    margin: 0; 
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--fs-muted);
+    line-height: 1.3;
+}
+
+/* ===========================
+   Buttons (Centered Actions)
+=========================== */
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions .btn-secondary {
+    min-width: 160px;
+    height: 54px;
+    background: transparent;
+    border: 1px solid var(--fs-border);
+    color: var(--fs-text);
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.form-actions .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form-actions .btn-primary {
+    min-width: 160px;
+    height: 54px;
+    background: linear-gradient(90deg, var(--fs-gold, #d4af37), #c39a2f);
+    color: #0b0b0b;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.form-actions .btn-primary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* ===========================
+   Responsive Mobile Styling
+=========================== */
+
+@media (max-width: 768px) {
+    .profile-form {
+        gap: 2rem;
+        padding: 0 12px;
+    }
+
+    .profile-form h2 {
+        font-size: 2.8rem;
+    }
+
+    .form-subtitle {
+        margin-top: -1.2rem;
+        font-size: 1rem;
+    }
+
+    .form-section h3 {
+        font-size: 1.6rem;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 3-in-a-row configuration for mobile */
+    .selection-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    /* 2-in-a-row configuration for 2-item categories */
+    .two-column {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    /* Compact sizing ensuring mobile grids fit perfectly */
+    .selection-card {
+        padding: 12px 6px;
+        min-height: 80px;
+        gap: 4px;
+    }
+
+    .selection-card .card-title {
+        font-size: 0.82rem;
+    }
+
+    .selection-card .card-desc {
+        font-size: 0.7rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,185 @@
+/* =========================================
+   1. Workouts Page (Workouts.jsx)
+   ========================================= */
+
+.workouts-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.workouts-page-header {
+    display: flex;
+    width: 100%;
+}
+
+.start-workout-button {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--fs-gold, #d4af37); /* Fallback added just in case */
+    color: #111; /* Kept dark for contrast against the gold */
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.start-workout-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.start-workout-button:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   2. Workout History List (WorkoutHistory.jsx)
+   ========================================= */
+
+.workout-history {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.workout-history h2 {
+    font-size: 0.9rem;
+    color: var(--fs-text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.workout-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Empty, Loading, and Error States */
+.workout-history-empty,
+.workout-history-loading,
+.workout-history-error {
+    background: var(--fs-surface);
+    border: 1px dashed var(--fs-border);
+    border-radius: 16px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--fs-text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.workout-history-empty p {
+    color: var(--fs-text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.workout-history-empty span {
+    font-size: 0.95rem;
+    max-width: 250px;
+    line-height: 1.4;
+}
+
+.workout-history-error {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+
+
+/* =========================================
+   4. Discard Snackbar (Toast)
+   ========================================= */
+
+.discard-snackbar {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    color: var(--fs-text);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    animation: slideUpToast 0.3s ease-out forwards;
+    min-width: 320px;
+}
+
+.discard-snackbar span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.discard-snackbar button {
+    background: transparent;
+    border: none;
+    color: var(--fs-gold); /* Using your theme's gold accent */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.discard-snackbar button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.discard-snackbar button:active {
+    transform: scale(0.95);
+}
+
+@keyframes slideUpToast {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* =========================================
+   5. Mobile Responsiveness
+   ========================================= */
+
+@media (max-width: 480px) {
+    .workout-history-card {
+        padding: 1rem;
+    }
+    
+    .workout-history-right {
+        gap: 0.8rem;
+    }
+    
+    .workout-history-stats {
+        font-size: 0.85rem;
+    }
+
+    .discard-snackbar {
+        width: calc(100% - 2rem);
+        bottom: 1rem;
+        min-width: auto;
+        gap: 1rem;
+        padding: 0.875rem 1.25rem;
+    }
+}

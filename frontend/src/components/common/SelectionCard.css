@@ -1,0 +1,71 @@
+/* ===========================
+   Selection Grid Layout
+=========================== */
+.selection-grid {
+    display: grid;
+    /* Forces exactly 2 columns, stretching to fill available space */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   Selection Card (Theme Style)
+=========================== */
+.selection-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-sizing: border-box; /* Ensures padding stays inside the card's width */
+
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 20px 22px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.selection-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.selection-card.selected {
+    background: rgba(212, 175, 55, 0.05); /* Assuming this is your gold/accent color */
+    border-color: var(--fs-gold);
+}
+
+.selection-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--fs-text);
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+.selection-card.selected h4 {
+    color: var(--fs-gold);
+}
+
+.selection-card p {
+    margin: 0;
+    color: var(--fs-muted);
+    line-height: 1.5;
+    font-size: 0.88rem;
+    font-weight: 400;
+}
+
+/* ===========================
+   Responsive Adjustments
+=========================== */
+@media (max-width: 850px) {
+    /* Stacks to 1 column on smaller tablet/mobile screens */
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
+}

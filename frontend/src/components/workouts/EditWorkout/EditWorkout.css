@@ -1,0 +1,236 @@
+/* =====================================================
+   Page & Layout
+===================================================== */
+.edit-workout-page {
+    background-color: var(--fs-bg); 
+    min-height: 100vh;
+    color: var(--fs-text);
+    padding: 2rem;
+}
+
+.edit-workout-loading,
+.edit-workout-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font-size: 1.125rem;
+    color: var(--fs-muted);
+    gap: 1rem;
+}
+
+.edit-workout-error {
+    color: var(--fs-red);
+}
+
+.back-workouts-button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--fs-gold);
+    color: var(--fs-bg);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.back-workouts-button:hover {
+    background-color: var(--fs-gold-dim);
+}
+
+/* =====================================================
+   Header
+===================================================== */
+.edit-workout-header {
+    margin-bottom: 2rem;
+}
+
+.header-nav {
+    display: grid;
+    /* This creates 3 columns. 1fr on sides forces the center item to be perfectly middle */
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-button {
+    justify-self: start; /* Pushes button to the far left */
+    background: transparent;
+    border: none;
+    color: var(--fs-gold);
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.header-main-title {
+    justify-self: center; /* Locks title to the absolute middle */
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+    color: var(--fs-text);
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* --- Inline Renaming Elements --- */
+.header-workout-name-container {
+    justify-self: end; /* Pushes the entire right section to the far right */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    min-width: 0; /* Important so the flex child can truncate */
+}
+
+.header-workout-name {
+    font-size: 1rem;
+    color: var(--fs-muted);
+    font-weight: 600;
+    text-align: right;
+    
+    /* Truncates the text with "..." if the workout name is too long */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-workout-name-input {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fs-text);
+    background-color: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    width: 12rem;
+    max-width: 100%;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.header-workout-name-input:focus {
+    border-color: var(--fs-gold);
+}
+
+.edit-workout-name-button,
+.save-workout-name-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--fs-muted);
+    cursor: pointer;
+    padding: 0.375rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.save-workout-name-button {
+    color: var(--fs-gold); /* Make the checkmark pop a bit more */
+}
+
+.edit-workout-name-button:hover:not(:disabled),
+.save-workout-name-button:hover:not(:disabled) {
+    color: var(--fs-gold);
+    background-color: var(--fs-surface);
+}
+
+.edit-workout-name-button:disabled,
+.save-workout-name-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   Exercises List & Add Button
+===================================================== */
+.edit-workout-exercises {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.add-exercise-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px dashed var(--fs-border);
+    border-radius: 1rem;
+    color: var(--fs-gold);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.add-exercise-button:hover:not(:disabled) {
+    background-color: var(--fs-surface);
+    border-color: var(--fs-gold);
+}
+
+.add-exercise-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   Footer (Done Button)
+===================================================== */
+.edit-workout-footer {
+    display: flex;
+}
+
+.done-editing-button {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background-color: var(--fs-gold);
+    color: var(--fs-bg);
+}
+
+.done-editing-button:hover {
+    background-color: var(--fs-gold-dim);
+}
+
+/* =====================================================
+   Responsive Adjustments
+===================================================== */
+@media (max-width: 768px) {
+    .edit-workout-page {
+        padding: 1rem;
+    }
+
+    .header-main-title {
+        font-size: 1.25rem;
+    }
+    
+    .header-workout-name,
+    .header-workout-name-input {
+        font-size: 0.875rem;
+    }
+
+    .header-workout-name-input {
+        width: 8rem; /* Smaller width for mobile */
+    }
+    
+    .back-button {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,86 @@
+.workout-history-card {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    gap: 1rem;
+}
+
+.workout-history-card:hover {
+    border-color: var(--fs-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Side: Name, Date, Duration */
+.workout-history-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.workout-history-left h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--fs-text);
+}
+
+.workout-history-subtext {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--fs-text-secondary);
+}
+
+/* Middle: Single-line Inline Stats */
+.workout-history-stats-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--fs-text-secondary);
+    white-space: nowrap;
+}
+
+.workout-history-stats-inline strong {
+    color: var(--fs-text);
+    font-weight: 600;
+}
+
+.dot-separator {
+    color: var(--fs-text-secondary);
+    font-weight: 400;
+}
+
+/* Arrow */
+.workout-history-arrow {
+    color: var(--fs-text-secondary);
+    font-size: 1.4rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.workout-history-card:hover .workout-history-arrow {
+    transform: translateX(4px);
+    color: var(--fs-gold);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .workout-history-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        position: relative;
+    }
+
+    .workout-history-arrow {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+    }
+}

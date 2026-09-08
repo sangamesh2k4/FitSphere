@@ -1,0 +1,148 @@
+/* Overlay - Covers the screen, blurs background, blocks interactions */
+.start-workout-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    backdrop-filter: blur(8px); /* The blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Keeps it on top of everything else */
+}
+
+/* Modal Container - Centered by the overlay */
+.start-workout-modal {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Optional: Subtle pop-in animation */
+    animation: modalPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header */
+.start-workout-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.start-workout-modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--fs-text);
+}
+
+.start-workout-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--fs-text-secondary);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.start-workout-modal-close:hover {
+    color: var(--fs-text);
+}
+
+/* Form Styles */
+.start-workout-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.start-workout-form-group label {
+    font-size: 0.9rem;
+    color: var(--fs-text-secondary);
+}
+
+.start-workout-form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: var(--fs-surface); /* Assuming input matches surface or use a slightly darker var */
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    color: var(--fs-text);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.start-workout-form-group input:focus {
+    border-color: var(--fs-gold);
+}
+
+/* Messages */
+.start-workout-error {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Action Buttons */
+.start-workout-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.start-workout-modal-actions button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.start-workout-modal-actions button[type="button"] {
+    background: transparent;
+    border: 1px solid var(--fs-border);
+    color: var(--fs-text);
+}
+
+.start-workout-modal-actions button[type="button"]:hover:not(:disabled) {
+    background: var(--fs-border);
+}
+
+.start-workout-modal-actions button[type="submit"] {
+    background: var(--fs-gold);
+    border: 1px solid var(--fs-gold);
+    color: #111;
+}
+
+.start-workout-modal-actions button[type="submit"]:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.start-workout-modal-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Animation Keyframes */
+@keyframes modalPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

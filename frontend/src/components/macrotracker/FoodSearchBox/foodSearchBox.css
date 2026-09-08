@@ -1,0 +1,104 @@
+/* =========================================================
+   SEARCH CONTAINER & FORM
+========================================================= */
+
+.food-search-section {
+    padding: 1.5rem;
+    background: #121212;
+    border: 1px solid #262626;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.food-search-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.food-search-label {
+    color: #f7b520;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.food-search-heading h2 {
+    margin: 0.25rem 0 0;
+    font-size: 1.2rem;
+}
+
+.food-search-heading p {
+    margin: 0;
+    color: #666;
+    font-size: 0.75rem;
+}
+
+.food-search-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.8rem;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.food-search-form input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    box-sizing: border-box;
+    background: var(--fs-surface-2);
+    border: 1px solid var(--fs-border);
+    border-radius: 9px;
+    color: var(--fs-text);
+    font-size: 0.9rem;
+}
+
+.food-search-form input::placeholder {
+    color: var(--fs-text-secondary);
+}
+
+.food-search-form input:focus {
+    outline: none;
+    border-color: #f7b520;
+    box-shadow: 0 0 0 3px rgba(247, 181, 32, 0.08);
+}
+
+.food-search-form button {
+    padding: 0 1.5rem;
+    background: #f7b520;
+    border: none;
+    border-radius: 9px;
+    color: #0a0a0a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.food-search-form button:hover {
+    background: #ffc63d;
+    transform: translateY(-1px);
+}
+
+.food-search-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .food-search-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .food-search-form {
+        grid-template-columns: 1fr;
+    }
+    .food-search-form button {
+        min-height: 46px;
+    }
+}

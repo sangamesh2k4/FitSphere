@@ -1,0 +1,43 @@
+.minerals-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.mineral-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1rem 0;
+
+    border-bottom:1px solid var(--fs-border);
+
+}
+
+.mineral-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.mineral-label{
+
+    color:var(--fs-text-secondary);
+
+    font-weight:500;
+
+}
+
+.mineral-value{
+
+    color:var(--fs-text);
+
+    font-weight:700;
+
+}

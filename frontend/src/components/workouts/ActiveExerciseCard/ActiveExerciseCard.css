@@ -1,0 +1,172 @@
+/* =========================================
+   Active Exercise Card
+   ========================================= */
+
+.active-exercise-card {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1rem; 
+}
+
+/* --- Header Section --- */
+.active-exercise-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.active-exercise-card-header h2 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.active-exercise-card-header span {
+    font-size: 0.9rem;
+    color: var(--fs-text-secondary);
+}
+
+/* --- Sets Section --- */
+.active-exercise-sets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Grid layout for headers, completed sets, and inputs */
+.active-exercise-sets-header,
+.active-exercise-set,
+.active-exercise-new-set {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr 40px; 
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.active-exercise-sets-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--fs-text-secondary);
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+}
+
+/* Individual Completed Set Row */
+.active-exercise-set {
+    background: var(--fs-surface-2, rgba(0, 0, 0, 0.02));
+    padding: 0.8rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--fs-border);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.active-exercise-set:hover {
+    background: transparent;
+    border-color: var(--fs-gold);
+}
+
+.active-exercise-set span {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums; 
+}
+
+/* Grouping secondary text colors */
+.active-exercise-set span:first-child,
+.active-exercise-new-set span {
+    color: var(--fs-text-secondary);
+    font-weight: 600;
+}
+
+/* --- New Set Input Row --- */
+.active-exercise-new-set {
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    border: 1px dashed var(--fs-border);
+    margin-top: 0.5rem;
+}
+
+/* Inputs for Weight and Reps */
+.active-exercise-new-set input {
+    width: 100%;
+    padding: 0.6rem;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    color: var(--fs-text);
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s;
+    font-variant-numeric: tabular-nums;
+}
+
+.active-exercise-new-set input:focus {
+    border-color: var(--fs-gold);
+}
+
+/* Remove up/down arrows from number inputs */
+.active-exercise-new-set input[type="number"]::-webkit-inner-spin-button,
+.active-exercise-new-set input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.active-exercise-new-set input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Confirm Set Button */
+.confirm-set-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--fs-gold);
+    color: #111;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: grid; /* Replaces flex/justify/align center */
+    place-items: center; 
+    cursor: pointer;
+    margin: 0 auto;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.confirm-set-button:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.confirm-set-button:disabled {
+    background: var(--fs-border);
+    color: var(--fs-text-secondary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .active-exercise-card {
+        padding: 1.2rem 1rem;
+    }
+    
+    .active-exercise-sets-header,
+    .active-exercise-set,
+    .active-exercise-new-set {
+        grid-template-columns: 24px 1fr 1fr 36px; 
+        gap: 0.5rem;
+    }
+    
+    .active-exercise-new-set input {
+        padding: 0.5rem 0.25rem;
+    }
+}

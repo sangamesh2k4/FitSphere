@@ -1,0 +1,197 @@
+/* ==========================================
+   FULL-SCREEN HERO SECTION (NO CARD)
+========================================== */
+
+.empty-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    min-height: 80vh; /* Fills vertical space cleanly */
+    padding: 40px 24px;
+    box-sizing: border-box;
+    
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.empty-profile__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    
+    background: var(--fs-surface-2);
+    border: 2px dashed var(--fs-border);
+    border-radius: 50%;
+    
+    color: var(--fs-gold);
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+.empty-profile h2 {
+    margin: 0 0 16px 0;
+    
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3.5rem; /* Scaled up for full screen */
+    letter-spacing: 2px;
+    line-height: 1;
+    text-align: center;
+    
+    color: var(--fs-gold);
+}
+
+.empty-profile p {
+    margin: 0 0 40px 0;
+    
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
+    
+    color: var(--fs-muted);
+    
+    max-width: 850px; /* Spreads readable text wider across the screen */
+}
+
+/* ==========================================
+   FEATURES GRID (SPREAD ACROSS SCREEN)
+========================================== */
+
+.empty-profile__features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 2fr));
+    align-items: center; /* Automatically tiles across width */
+    gap: 16px;
+    
+    width: 100%;
+    max-width: 1200px; /* Expands wide across the dashboard */
+    margin: 0 0 48px 0;
+    padding: 0;
+    
+    list-style: none;
+}
+
+.empty-profile__features li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 18px 20px;
+    
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    
+    color: var(--fs-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.empty-profile .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    max-width: 300px;
+    height: 56px;
+    
+    background: linear-gradient(90deg, var(--fs-gold, #d4af37), #c39a2f);
+    color: #0b0b0b;
+    
+    border: none;
+    border-radius: 12px;
+    
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    
+    cursor: pointer;
+    
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.empty-profile .btn-primary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+/* ==========================================
+   RESPONSIVE STYLES (TABLET & MOBILE)
+========================================== */
+
+/* Tablet (Screens up to 768px) */
+@media (max-width: 768px) {
+    .empty-profile {
+        padding: 32px 20px;
+        min-height: 70vh; /* Slightly smaller height footprint */
+    }
+
+    .empty-profile h2 {
+        font-size: 2.8rem; /* Scale down heading */
+    }
+
+    .empty-profile p {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .empty-profile__features {
+        gap: 12px;
+        max-width: 100%;
+    }
+    
+    .empty-profile__features li {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile (Screens up to 480px) */
+@media (max-width: 480px) {
+    .empty-profile {
+        padding: 24px 16px;
+    }
+
+    .empty-profile__icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 16px;
+    }
+
+    .empty-profile h2 {
+        font-size: 2.2rem; /* Keep it punchy but readable */
+        letter-spacing: 1px;
+    }
+
+    .empty-profile__features {
+        /* Drop the 2 columns and stack them on top of each other */
+        grid-template-columns: 1fr; 
+        margin-bottom: 32px;
+    }
+
+    .empty-profile .btn-primary {
+        max-width: 100%; /* Let the button fill out the mobile width */
+        height: 50px;
+        font-size: 1rem;
+    }
+}

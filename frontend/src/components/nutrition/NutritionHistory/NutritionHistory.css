@@ -1,0 +1,356 @@
+/* ============================= */
+/* MAIN CONTAINER                */
+/* ============================= */
+
+.nutrition-history {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+}
+
+.nutrition-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--fs-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.nutrition-history-header h2 {
+    margin: 0;
+    color: var(--fs-text);
+    font-size: 1.35rem;
+}
+
+/* ============================= */
+/* HISTORY LIST & ACCORDION ROWS */
+/* ============================= */
+
+.nutrition-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* New: Wraps both the row and the expanded content */
+.history-accordion-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.nutrition-history-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr repeat(5, 1fr);
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    background: transparent;
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    color: var(--fs-text);
+    text-align: left;
+    cursor: pointer;
+    transition: 
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nutrition-history-row:hover {
+    background: var(--fs-surface-hover);
+    border-color: var(--fs-gold);
+    transform: translateY(-1px);
+}
+
+.nutrition-history-row.selected {
+    border-color: var(--fs-gold);
+    background: var(--fs-surface-hover);
+    /* Connect smoothly to the expanded panel below */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+    transform: translateY(0); /* Reset hover lift when open */
+}
+
+/* ============================= */
+/* DATE & STATS                  */
+/* ============================= */
+
+.history-date {
+    font-weight: 600;
+    color: var(--fs-text);
+}
+
+.history-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.history-stat span {
+    font-size: 0.72rem;
+    color: var(--fs-muted);
+    text-transform: uppercase;
+}
+
+.history-stat strong {
+    font-size: 0.9rem;
+    color: var(--fs-text);
+}
+
+/* ============================= */
+/* EXPANDED ACCORDION CONTENT    */
+/* ============================= */
+
+.history-expanded-content {
+    background: var(--fs-background, #f9fafb);
+    border: 1px solid var(--fs-gold); /* Match selected row border */
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 1.2rem;
+    animation: slideDown 0.2s ease-out;
+}
+
+.expanded-msg {
+    color: var(--fs-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================= */
+/* FOOD LIST                     */
+/* ============================= */
+
+.expanded-foods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.history-food-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--fs-border);
+    border-radius: 10px;
+    background: var(--fs-surface);
+}
+
+.history-food-row > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0; /* Ensures text truncation works */
+}
+
+.history-food-row strong {
+    color: var(--fs-text);
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-food-row span {
+    color: var(--fs-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.history-food-macros {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.history-food-macros span {
+    white-space: nowrap;
+}
+
+/* ============================= */
+/* EMPTY / ERROR STATES          */
+/* ============================= */
+
+.nutrition-history-empty {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: var(--fs-muted);
+    border: 1px dashed var(--fs-border);
+    border-radius: 12px;
+}
+
+.nutrition-history-error {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    color: var(--fs-danger, #ef4444);
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+}
+
+/* ============================= */
+/* PAGINATION                    */
+/* ============================= */
+
+.history-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.history-pagination button {
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    background: var(--fs-surface);
+    color: var(--fs-text);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.history-pagination button:hover:not(:disabled) {
+    border-color: var(--fs-gold);
+    background: var(--fs-surface-hover);
+}
+
+.history-pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.history-pagination span {
+    color: var(--fs-muted);
+    font-size: 0.85rem;
+}
+
+/* ============================== */
+/* SHOW MORE BUTTON               */
+/* ============================== */
+
+.history-show-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.show-more-btn {
+  background-color: var(--fs-surface);
+  color: var(--fs-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--fs-shadow);
+  min-width: 140px;
+  
+  /* Inherits your global 0.5s theme transitions, adding transform for the active click */
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, transform 0.1s ease;
+}
+
+/* Hover state - only applies when not disabled */
+.show-more-btn:hover:not(:disabled) {
+  background-color: var(--fs-surface-2);
+  /* Taps into your gold dim variable for a subtle interactive accent on hover */
+  border-color: var(--fs-gold-dim); 
+}
+
+/* Click state */
+.show-more-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Loading/Disabled state */
+.show-more-btn:disabled {
+  background-color: var(--fs-bg);
+  color: var(--fs-subtle);
+  border-color: var(--fs-border);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+
+@media (max-width: 900px) {
+    .nutrition-history-row {
+        grid-template-columns: 1.5fr repeat(3, 1fr);
+    }
+
+    /* Hide the 4th and 5th stats on medium screens */
+    .history-stat:nth-child(5),
+    .history-stat:nth-child(6) {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .nutrition-history {
+        padding: 1rem;
+    }
+
+    .nutrition-history-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    /* Make date span full width */
+    .history-date {
+        grid-column: 1 / -1;
+    }
+
+    /* Bring back the hidden stats for the stacked mobile view */
+    .history-stat:nth-child(5),
+    .history-stat:nth-child(6) {
+        display: flex;
+    }
+
+    .history-food-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .history-food-macros {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+}

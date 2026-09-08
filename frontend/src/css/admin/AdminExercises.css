@@ -1,0 +1,260 @@
+/* ── PAGE LAYOUT & HEADER ── */
+.admin-exercises-page {
+    /* max-width: 900px; Narrows card area on desktop */
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    padding-bottom: 5rem; /* Extra space for the bottom nav on mobile */
+    font-family: 'Inter', sans-serif;
+}
+
+.admin-page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.admin-page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--fs-text, #111);
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.admin-page-subtitle {
+    color: var(--fs-muted, #666);
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ── CONTROL PANEL (Search & Filters) ── */
+.admin-controls-panel {
+    background: var(--fs-surface, #fff);
+    border: 1px solid var(--fs-border, #e5e5e5);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+/* Search Input */
+.admin-search-wrapper {
+    margin-bottom: 0.75rem;
+}
+
+.admin-search-input {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--fs-surface-2, #f5f5f5);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--fs-text);
+    outline: none;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-search-input::placeholder {
+    color: var(--fs-subtle, #999);
+}
+
+.admin-search-input:focus {
+    box-shadow: 0 0 0 2px var(--fs-gold-bg, #fde68a); 
+    border-color: var(--fs-gold, #d97706);
+}
+
+/* Filters Grid */
+.admin-filters-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.admin-filter-select {
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--fs-surface-2, #f5f5f5);
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 0.6rem 2rem 0.6rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--fs-text);
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+.admin-filter-select:hover {
+    background-color: var(--fs-border, #e5e5e5);
+}
+
+/* Primary Action Button */
+.admin-btn-add {
+    width: 100%;
+    background: var(--fs-gold, #c2822a); 
+    color: var(--fs-bg, #fff);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.admin-btn-add:hover {
+    background: var(--fs-gold-dim, #a66d21);
+}
+
+.admin-btn-add:active {
+    transform: scale(0.98);
+}
+
+/* ── EXERCISE LIST HEADER ── */
+.admin-list-header {
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+}
+
+.admin-results-count {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--fs-muted, #666);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ── LIST CONTAINER & GRID ── */
+.admin-list-container {
+    display: grid;
+    /* Mobile: 1 card per row */
+    grid-template-columns: 1fr; 
+    gap: 0.65rem;
+}
+
+/* Desktop & Tablet: 2 cards per row */
+@media (min-width: 768px) {
+    .admin-list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── EXERCISE CARD ── */
+.admin-exercise-card {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background-color: var(--fs-surface, #fff);
+    border: 1px solid var(--fs-border, #e5e5e5);
+    border-radius: 8px;
+    padding: 0.5rem 0.65rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-exercise-card:hover {
+    border-color: var(--fs-gold, #c2822a);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Card Image */
+.admin-card-image {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    object-fit: contain;
+    background-color: var(--fs-surface-2, #f9f9f9);
+    flex-shrink: 0;
+}
+
+/* Card Title (WebKit Box Flow Truncation) */
+.admin-card-title {
+    flex: 1;
+    min-width: 0; /* CRITICAL for flex truncation */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--fs-text, #111);
+    text-align: left;
+
+    /* WebKit Box Flow Truncation */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Truncates cleanly after 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+/* Card Metadata (Muscle & Status) */
+.admin-card-muscle {
+    font-size: 0.725rem;
+    color: var(--fs-muted, #666);
+    text-transform: capitalize;
+    min-width: 50px;
+    text-align: left;
+    
+    /* WebKit Box Single-Line Clamp */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-card-status {
+    font-size: 0.725rem;
+    font-weight: 700;
+    color: var(--fs-text, #111);
+    min-width: 40px;
+}
+
+/* Card Action Buttons */
+.admin-card-actions {
+    display: flex;
+    gap: 0.35rem;
+    flex-shrink: 0;
+}
+
+.admin-card-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid var(--fs-border, #e5e5e5);
+    border-radius: 6px;
+    color: var(--fs-muted, #666);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.admin-card-action-btn:hover {
+    color: var(--fs-text, #111);
+    border-color: var(--fs-muted, #999);
+    background-color: var(--fs-surface-2, #f5f5f5);
+}
+
+/* ── MOBILE SPECIFIC ADJUSTMENTS ── */
+@media (max-width: 600px) {
+    /* Hide secondary muscle and status info on small mobile so title and action buttons fit seamlessly */
+    .admin-card-muscle,
+    .admin-card-status {
+        display: none;
+    }
+    
+    .admin-controls-panel {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,91 @@
+.workout-card {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.workout-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--fs-gold);
+}
+
+.workout-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.workout-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--fs-muted);
+}
+
+.badge.in-progress-badge {
+  background: rgba(250, 204, 21, 0.1);
+  color: var(--fs-gold);
+  border-color: rgba(250, 204, 21, 0.3);
+}
+
+.workout-card h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+}
+
+.workout-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex: 1; /* Pushes the button to the bottom */
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--fs-muted);
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--fs-text);
+}
+
+.workout-card-bottom {
+  border-top: 1px solid var(--fs-border);
+  padding-top: 1rem;
+}
+
+.workout-view-button {
+  background: none;
+  border: none;
+  color: var(--fs-gold);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.workout-view-button:hover {
+  opacity: 0.8;
+}

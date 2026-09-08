@@ -1,0 +1,72 @@
+/* =========================================================
+   NUTRITION SUMMARY (2-COLUMN DASHBOARD GRID)
+========================================================= */
+
+.nutrition-summary {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.nutrition-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1.5rem;
+}
+
+.macro-item {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.macro-label {
+    color: var(--fs-muted);
+    font-weight: 600;
+}
+
+.macro-value {
+    color: var(--fs-text);
+    font-weight: 700;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--fs-surface-2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+/* Macro Bar Color Modifiers using Theme Variables */
+.progress-fill.fill-calories {
+    background: var(--fs-gold);
+}
+
+.progress-fill.fill-protein {
+    background: var(--fs-blue, #378add);
+}
+
+.progress-fill.fill-carbohydrates {
+    background: var(--fs-green);
+}
+
+.progress-fill.fill-fat {
+    background: var(--fs-text);
+}
+
+/* Mobile Responsive Fallback */
+@media (max-width: 600px) {
+    .nutrition-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

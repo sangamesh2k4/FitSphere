@@ -1,0 +1,43 @@
+.nutrition-facts-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.nutrition-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1rem 0;
+
+    border-bottom:1px solid var(--fs-border);
+
+}
+
+.nutrition-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.nutrition-label{
+
+    color:var(--fs-text-secondary);
+
+    font-weight:500;
+
+}
+
+.nutrition-value{
+
+    font-weight:700;
+
+    color:var(--fs-text);
+
+}

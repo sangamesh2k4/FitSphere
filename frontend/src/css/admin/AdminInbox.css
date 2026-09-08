@@ -1,0 +1,212 @@
+/* ── INBOX PAGE LAYOUT ── */
+.admin-inbox-page {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.admin-inbox-loading {
+    text-align: center;
+    color: var(--fs-muted);
+    padding: 3rem 1rem;
+}
+
+/* ── HEADER ── */
+.admin-inbox-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.admin-inbox-header h1 {
+    font-family: 'Bebas Neue', sans-serif; /* Adds a nice bold stylized weight if preferred, otherwise Inter takes over */
+    font-size: 3rem;
+    color: var(--fs-text);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+.admin-inbox-subtitle {
+    color: var(--fs-muted);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ── FILTERS AREA ── */
+.admin-inbox-filters-card {
+    background-color: var(--fs-surface);
+    border-radius: 12px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--fs-shadow);
+}
+
+.admin-inbox-filters-card select {
+    flex: 1;
+    background-color: var(--fs-surface-2);
+    color: var(--fs-text);
+    border: none;
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    /* Basic custom arrow utilizing border/background variables natively */
+    background-image: linear-gradient(45deg, transparent 50%, var(--fs-muted) 50%),
+                      linear-gradient(135deg, var(--fs-muted) 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px),
+                         calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+/* ── INBOX LIST & CARDS ── */
+.admin-inbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.admin-inbox-card {
+    background-color: var(--fs-surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--fs-shadow);
+}
+
+/* ── MAIN CONTENT (LEFT SIDE) ── */
+.admin-inbox-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-inbox-main h3 {
+    color: var(--fs-text);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.admin-inbox-reason {
+    color: var(--fs-gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ── META CONTENT (RIGHT SIDE) ── */
+.admin-inbox-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+}
+
+.admin-inbox-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+}
+
+.status-resolved {
+    color: var(--fs-green);
+    background-color: var(--fs-surface-2); 
+}
+
+.status-open,
+.status-in_progress {
+    color: var(--fs-gold-dim); 
+    background-color: var(--fs-gold-bg);
+}
+
+.admin-inbox-date {
+    color: var(--fs-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ── BUTTONS ── */
+.admin-inbox-action-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-solid {
+    background-color: var(--fs-gold);
+    color: var(--fs-bg);
+    border: 1px solid var(--fs-gold);
+}
+
+.btn-solid:hover {
+    background-color: var(--fs-gold-dim);
+    border-color: var(--fs-gold-dim);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--fs-text);
+    border: 1px solid var(--fs-border);
+}
+
+.btn-outline:hover {
+    background-color: var(--fs-surface-2);
+}
+
+/* ── LOAD MORE FOOTER ── */
+.admin-inbox-load-more {
+    text-align: center;
+    padding: 2rem;
+    color: var(--fs-muted);
+    font-size: 0.95rem;
+}
+
+/* ── MOBILE STYLES ── */
+@media (max-width: 600px) {
+    .admin-inbox-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .admin-inbox-subtitle {
+        font-size: 1rem;
+    }
+
+    .admin-inbox-filters-card {
+        flex-direction: column;
+    }
+
+    .admin-inbox-card {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .admin-inbox-meta {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .admin-inbox-action-btn {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .admin-inbox-date {
+        margin-bottom: 0;
+    }
+}

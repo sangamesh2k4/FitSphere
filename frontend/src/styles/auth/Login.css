@@ -1,0 +1,84 @@
+/* Import the shared auth styles so we don't repeat layout code */
+@import './Auth.css';
+
+/* --- HEADER --- */
+.login-header-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--fs-gold);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.login-header-text p {
+  color: var(--fs-muted);
+}
+
+/* --- REMEMBER ME & FORGOT PASSWORD --- */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.login-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--fs-text);
+  cursor: pointer;
+}
+
+/* Forces the checkbox to be gold instead of browser-default blue */
+.login-options input[type="checkbox"] {
+  accent-color: var(--fs-gold);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.login-options a {
+  color: var(--fs-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-options a:hover {
+  color: var(--fs-text);
+}
+
+/* --- AUTH LINK BUTTON (Used for Forgot Password) --- */
+.auth-link-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--fs-gold);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.75rem; /* Adds a little breathing room above the next paragraph */
+  transition: color 0.2s ease;
+}
+
+.auth-link-button:hover {
+  color: var(--fs-text);
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE / MOBILE --- */
+@media (max-width: 480px) {
+  .auth-card {
+    /* Just reduce the padding for smaller screens so it fits perfectly */
+    padding: 1.5rem; 
+    
+    /* Removed the old background and border overrides so it stays a visible floating card! */
+  }
+}

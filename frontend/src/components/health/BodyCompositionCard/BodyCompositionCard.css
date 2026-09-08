@@ -1,0 +1,45 @@
+.body-composition-card {
+    flex: 1;
+    background: var(--fs-bg);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--fs-border);
+}
+
+.composition-metrics-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 14px;
+}
+
+.composition-metric {
+    flex: 1;
+}
+
+.composition-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.composition-label {
+    font-size: 12px;
+    color: var(--fs-muted);
+}
+
+.composition-value-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--fs-text);
+}
+
+.metric-progress {
+    height: 5px;
+    background: var(--fs-surface-2);
+    border-radius: 3px;
+}
+
+.metric-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+}

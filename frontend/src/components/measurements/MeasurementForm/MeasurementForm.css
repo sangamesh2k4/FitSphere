@@ -1,0 +1,200 @@
+.measurement-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.measurement-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--fs-border);
+  padding-bottom: 1.25rem;
+}
+
+.measurement-form-header h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+  color: var(--fs-text);
+}
+
+.measurement-form-header p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--fs-muted);
+}
+
+.measurement-form-close {
+  background: transparent;
+  border: none;
+  color: var(--fs-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.measurement-form-close:hover {
+  color: var(--fs-text);
+}
+
+.measurement-form-error {
+  background-color: rgba(255, 69, 58, 0.1);
+  color: var(--fs-danger);
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--fs-danger);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.measurement-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fs-muted);
+}
+
+.input-with-unit {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-unit input {
+  width: 100%;
+  background-color: var(--fs-bg);
+  border: 1px solid var(--fs-border);
+  color: var(--fs-text);
+  padding: 0.75rem 3rem 0.75rem 1rem; /* Extra padding on right for the unit */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-with-unit input:focus {
+  outline: none;
+  border-color: var(--fs-gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2); /* Adjust RGBA if your gold is different */
+}
+
+/* Hide up/down arrows on number inputs */
+.input-with-unit input::-webkit-outer-spin-button,
+.input-with-unit input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-with-unit input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-with-unit span {
+  position: absolute;
+  right: 1rem;
+  color: var(--fs-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.recorded-at-group {
+  grid-column: 1 / -1; /* Span full width */
+}
+
+.recorded-at-group input[type="datetime-local"] {
+  width: 100%;
+  background-color: var(--fs-bg);
+  border: 1px solid var(--fs-border);
+  color: var(--fs-text);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color-scheme: dark; /* Helps native date picker inherit dark mode styles */
+}
+
+.recorded-at-group input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: var(--fs-gold);
+}
+
+.measurement-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--fs-border);
+  padding-top: 1.5rem;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: var(--fs-text);
+  border: 1px solid var(--fs-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: var(--fs-border);
+}
+
+.submit-button {
+  background-color: var(--fs-gold);
+  color: var(--fs-bg);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .measurement-form {
+    padding: 1.5rem;
+  }
+
+  .measurement-form-grid {
+    grid-template-columns: 1fr; /* Stack inputs on mobile */
+  }
+
+  .measurement-form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .measurement-form-actions button {
+    width: 100%;
+  }
+}

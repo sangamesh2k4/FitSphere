@@ -1,0 +1,59 @@
+.health-score-card {
+    background: var(--fs-bg);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.card-mini-title {
+    font-size: 11px;
+    color: var(--fs-muted);
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.score-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-ring {
+    --score: 0;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--fs-green) calc(var(--score) * 1%),
+        var(--fs-surface-2) 0
+    );
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.score-ring::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    background: var(--fs-bg);
+    border-radius: 50%;
+}
+
+.score-ring-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.score-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--fs-text);
+    line-height: 1;
+}

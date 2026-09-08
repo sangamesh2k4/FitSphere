@@ -1,0 +1,15 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-success { background: var(--fs-gold-bg); color: var(--fs-gold); border: 1px solid var(--fs-gold-dim); }
+.badge-warning { background: var(--fs-surface-2); color: var(--fs-text); border: 1px solid var(--fs-border); }
+.badge-danger { background: var(--fs-red-bg); color: var(--fs-red); border: 1px solid var(--fs-border); }

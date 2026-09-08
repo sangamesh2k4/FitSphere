@@ -1,0 +1,64 @@
+.modal-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:1000;
+}
+
+.modal{
+
+    width:420px;
+    max-width:90%;
+
+    padding:2rem;
+
+    background:var(--fs-background);
+
+    border:1px solid var(--fs-border);
+    border-radius:16px;
+}
+
+.modal h2{
+
+    margin-bottom:1.5rem;
+
+    font-family:'Bebas Neue',sans-serif;
+    font-size:2.5rem;
+}
+
+.modal input{
+
+    width:100%;
+
+    margin-bottom:2rem;
+
+    padding:14px 18px;
+
+    background:var(--fs-surface);
+
+    color:var(--fs-text);
+
+    border:1px solid var(--fs-border);
+    border-radius:10px;
+}
+
+.modal input:focus{
+
+    outline:none;
+
+    border-color:var(--fs-gold);
+}
+
+.modal-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:1rem;
+}

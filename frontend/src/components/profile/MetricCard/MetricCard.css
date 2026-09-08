@@ -1,0 +1,55 @@
+.metric-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .75rem;
+    padding: 1.5rem;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    min-height: 160px;
+    transition: all .25s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--fs-primary);
+}
+
+.metric-title {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    color: var(--fs-text-secondary);
+}
+
+.metric-value {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.15rem;
+    font-size: 5.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    white-space: nowrap;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.metric-value span:first-child {
+    font-size: 3rem;
+    color: var(--fs-text);
+}
+
+.metric-unit {
+    font-size: 2rem;
+    color: var(--fs-text-secondary);
+
+    margin: 0;
+    line-height: 1;
+}
+.metric-subtitle {
+    color: var(--fs-primary);
+    font-weight: 600;
+    margin-top: auto;
+    font-size: .95rem;
+}

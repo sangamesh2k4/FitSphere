@@ -1,0 +1,189 @@
+.auth-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0; /* Ensures no top offset from container */
+}
+
+/* =========================================================
+   AUTH CARD CONTAINER
+========================================================= */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  
+  background-color: var(--fs-surface, #121212);
+  /* REDUCED TOP PADDING from 1.5rem to 0.75rem */
+  padding: 0.75rem 1.5rem 1.25rem 1.5rem; 
+  border-radius: 12px; 
+  border: 1px solid var(--fs-border, #333);
+  
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+/* REMOVED GAP ABOVE TITLE */
+.auth-card h2 {
+  margin-top: 0 !important; /* Forces title to sit right at top */
+  margin-bottom: 0.1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--fs-gold, #f0b429);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.auth-card p {
+  color: var(--fs-muted, #888);
+  text-align: center;
+  margin-top: 0.15rem;
+  margin-bottom: 0.75rem; 
+  font-size: 0.85rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem; 
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--fs-text, #f0f0f0);
+}
+
+.form-group input {
+  height: 38px; 
+  padding: 0 0.75rem; 
+  background: var(--fs-bg, #0a0a0a); 
+  color: var(--fs-text, #fff);
+  border: 1px solid var(--fs-border, #2a2a2a);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--fs-gold, #f0b429);
+  box-shadow: 0 0 0 2px rgba(240, 180, 41, 0.15); 
+}
+
+/* Compact Password Requirements (2 Columns) */
+.password-requirements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.15rem 0.5rem; 
+  margin-top: 0.1rem; 
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem; 
+  color: var(--fs-muted, #888);
+}
+
+/* Generic Button Pointer rule for all buttons inside auth card */
+.auth-card button,
+.auth-form button {
+  cursor: pointer;
+}
+
+/* Submit & Primary Buttons */
+.auth-form button[type="submit"],
+.primary-button {
+  margin-top: 0.25rem;
+  height: 40px;
+  background: var(--fs-gold, #f0b429);
+  color: #000;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.auth-form button[type="submit"]:hover,
+.primary-button:hover {
+  background: var(--fs-gold-dim, #b8860b);
+}
+
+.auth-footer {
+  margin-top: 0.5rem; 
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--fs-muted, #888);
+}
+
+.auth-footer a,
+.auth-footer button {
+  color: var(--fs-gold, #f0b429);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.auth-footer a:hover,
+.auth-footer button:hover {
+  text-decoration: underline;
+}
+
+.error-banner,
+.success-banner {
+  padding: 0.4rem 0.65rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+.close-modal {
+  display: none !important;
+}
+/* =========================================================
+   ERROR & SUCCESS BANNERS
+========================================================= */
+.error-banner {
+  background-color: var(--fs-error-bg, rgba(229, 57, 53, 0.12));
+  border: 1px solid var(--fs-error-border, rgba(229, 57, 53, 0.3));
+  color: var(--fs-error-text, #ff6b6b);
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.success-banner {
+  background-color: var(--fs-success-bg, rgba(46, 125, 50, 0.12));
+  border: 1px solid var(--fs-success-border, rgba(46, 125, 50, 0.3));
+  color: var(--fs-success-text, #81c784);
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  border-radius: 8px;
+  text-align: left;
+  line-height: 1.4;
+  box-sizing: border-box;
+}

@@ -1,0 +1,68 @@
+/* --- Header Layout --- */
+.trend-section-header {
+  display: flex;
+  justify-content: space-between; /* Pushes children to opposite ends */
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--fs-border);
+}
+
+.section-title-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--fs-muted);
+  text-transform: uppercase;
+}
+
+.trend-actions-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* You can add a min-width here if you want the dropdown to have a fixed size */
+  min-width: 140px; 
+}
+
+/* --- Trend Container (Keeping your previous styles) --- */
+.trend-container {
+  background-color: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trend-empty {
+  color: var(--fs-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Recharts Tooltip Styling */
+.recharts-default-tooltip {
+  background-color: var(--fs-surface) !important;
+  border: 1px solid var(--fs-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--fs-gold) !important;
+  font-weight: 600 !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--fs-muted) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--fs-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}

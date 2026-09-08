@@ -1,0 +1,113 @@
+.dashboard-consistency {
+    width: 100%;
+
+    padding: 1.4rem;
+
+    border-radius: 16px;
+
+    background: var(--fs-gray-900, #181818);
+    color: #fff;
+}
+
+
+/* ==========================================
+   Label
+========================================== */
+
+.dashboard-consistency-label {
+    display: block;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    opacity: 0.65;
+}
+
+
+/* ==========================================
+   Content
+========================================== */
+
+.dashboard-consistency-content {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+.dashboard-consistency-count {
+    display: flex;
+    align-items: baseline;
+
+    gap: 0.3rem;
+}
+
+.dashboard-consistency-count strong {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.dashboard-consistency-count span {
+    font-size: 0.8rem;
+    opacity: 0.65;
+}
+
+.dashboard-consistency-description {
+    font-size: 0.8rem;
+    opacity: 0.65;
+}
+
+
+/* ==========================================
+   Progress
+========================================== */
+
+.dashboard-consistency-progress {
+    width: 100%;
+    height: 8px;
+
+    margin-top: 1.25rem;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.dashboard-consistency-progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--fs-gold);
+
+    transition: width 0.4s ease;
+}
+
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 600px) {
+
+    .dashboard-consistency {
+        padding: 1.15rem;
+    }
+
+    .dashboard-consistency-content {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 0.5rem;
+    }
+
+    .dashboard-consistency-count strong {
+        font-size: 2.2rem;
+    }
+}

@@ -1,0 +1,73 @@
+.healthy-range-card {
+  justify-content: flex-start;
+}
+
+.healthy-range-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3rem;
+}
+
+.range-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.range-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.weight-range-icon {
+  color: var(--fs-green);
+  background: var(--fs-green-bg);
+  border: 1px solid var(--fs-green-bg);
+}
+
+.fat-range-icon {
+  color: var(--fs-text);
+  background: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+}
+
+.range-details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.range-label {
+  margin-bottom: 0.2rem;
+  color: var(--fs-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.range-value {
+  color: var(--fs-text);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.range-description {
+  margin-top: 0.25rem;
+  color: var(--fs-muted);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.range-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--fs-border);
+}

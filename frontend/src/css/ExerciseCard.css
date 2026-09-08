@@ -1,0 +1,279 @@
+/* --- EXERCISE CARD CONTAINER --- */
+.exercise-card.horizontal-layout {
+  display: flex; /* Switched to flex for better horizontal control */
+  gap: 1.25rem;
+  align-items: stretch; /* Ensures right column fills the height */
+  padding: 1.25rem;
+  
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.exercise-card.horizontal-layout:hover {
+  transform: translateY(-4px);
+  border-color: var(--fs-gold);
+}
+
+/* --- IMAGE PLACEHOLDER (LEFT) --- */
+.exercise-image-left {
+  flex-shrink: 0;
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+
+  overflow: hidden; /* important */
+}
+
+.exercise-image-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+    object-fit: cover;
+  display: block;
+}
+
+/* --- CONTENT WRAPPER (RIGHT) --- */
+.exercise-content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  min-width: 0; /* Critical: prevents long text from breaking the flex layout */
+}
+
+/* --- HEADER (Title, Badge & Heart) --- */
+.exercise-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Keeps the heart pinned to the absolute top right */
+  gap: 1rem;
+}
+
+/* Title & Badge Grouping */
+.title-badge-group {
+  display: flex;
+  flex-wrap: wrap; /* Lets the badge wrap naturally if the title is very long */
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.title-badge-group h2 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; /* Adjusted for 3-column layout */
+  line-height: 1.05; /* Tight line height for stacked text like the image */
+  color: var(--fs-text);
+  word-wrap: break-word; /* Forces long words to wrap */
+}
+
+/* --- FAVORITE BUTTON --- */
+.favorite-button {
+  flex-shrink: 0; /* Keeps the heart shape intact */
+  background: transparent;
+  border: none;
+  padding: 0.2rem;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: var(--fs-muted); 
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.15);
+}
+
+.favorite-button.active {
+  color: #ef4444; 
+}
+
+/* --- DIFFICULTY BADGE --- */
+.difficulty-badge.outline {
+  padding: 0.35rem 0.6rem;
+  background: transparent;
+  border: 1px solid var(--fs-border);
+  border-radius: 999px;
+  
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap; /* Ensures badge text never wraps on itself */
+}
+
+/* Badge Colors */
+.difficulty-badge.beginner {
+  border-color: rgba(74, 222, 128, 0.4);
+  color: #4ade80;
+}
+
+.difficulty-badge.intermediate {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
+}
+
+.difficulty-badge.advanced {
+  border-color: rgba(248, 113, 113, 0.4);
+  color: #f87171;
+}
+
+/* --- FOOTER (Category/Muscle & View Link) --- */
+/* --- FOOTER (Category/Muscle & View Link) --- */
+.exercise-footer-bottom {
+  margin-top: auto; /* Pushes footer to the very bottom */
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap; /* Forces items to stay on the same line */
+}
+
+.exercise-meta {
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Stops the category text from wrapping */
+  overflow: hidden; 
+  text-overflow: ellipsis; /* Adds '...' if the text gets too long for the card */
+}
+
+.exercise-view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  background: var(--fs-surface-2); /* Placeholder for button background, can be adjusted */
+  border: 5px solid var(--fs-surface-2); /* Placeholder for button border, can be adjusted */
+  border-radius: 10px; /* Placeholder for button border, can be adjusted */
+
+  color: var(--fs-text); /* Highlighted text color (White in dark mode) */
+  text-decoration: none; 
+
+  cursor: pointer;
+
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700; /* Increased weight to highlight the text more */
+  white-space: nowrap; /* Keeps the button text together */
+
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.exercise-view-button:hover {
+  color: var(--fs-gold);
+  transform: translateX(4px);
+}
+
+.exercise-view-button:visited {
+  color: var(--fs-text);
+}
+
+.exercise-view-button:visited:hover {
+  color: var(--fs-gold);
+}
+
+/* --- RESPONSIVE MOBILE ADJUSTMENTS --- */
+@media (max-width: 600px) {
+  .exercise-card.horizontal-layout {
+    flex-direction: column; 
+    padding: 0.75rem; /* Tighter padding for mobile cards */
+    gap: 0.75rem;
+    position: relative; /* Required to absolute-position the heart icon */
+  }
+
+  /* Image becomes a perfect square filling the width */
+  .exercise-image-left {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Forces a perfect square */
+    border-radius: 8px;
+  }
+
+  .exercise-content-right {
+    gap: 0.4rem;
+  }
+
+  /* Reset header to stack title and badge */
+  .exercise-header-top {
+    margin-top: 0;
+    display: block; 
+  }
+
+  .title-badge-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  /* Smaller title that wraps naturally */
+  .title-badge-group h2 {
+    font-size: 1.1rem; 
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  /* Make difficulty badges "filled" instead of outlined on mobile */
+  .difficulty-badge.outline {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6rem;
+  }
+  .difficulty-badge.beginner { background: rgba(74, 222, 128, 0.15); }
+  .difficulty-badge.intermediate { background: rgba(250, 204, 21, 0.15); }
+  .difficulty-badge.advanced { background: rgba(248, 113, 113, 0.15); }
+
+  /* Absolute position the heart over the top right of the card/image */
+  .favorite-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ffffff; /* White circle background */
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+
+  /* Footer stacks category and view link into separate lines */
+  .exercise-footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.25rem;
+    margin-top: 0.2rem;
+  }
+
+  .exercise-meta {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  /* Show "View Exercise" on its own separate line */
+  .exercise-view-button {
+    display: inline-flex;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+}

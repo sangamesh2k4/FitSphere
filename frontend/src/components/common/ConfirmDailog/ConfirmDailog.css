@@ -1,0 +1,135 @@
+/* ===========================
+   Dialog Overlay
+=========================== */
+.dialog-overlay {
+    position: fixed;
+    inset: 0;
+    
+    /* Reduced darkness and blur for a lighter overlay */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(4px); 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    
+    animation: fadeInOverlay 0.2s ease-out;
+}
+
+/* ===========================
+   Dialog Container
+=========================== */
+.dialog {
+    
+    background: var(--fs-surface, #0f0f0f);
+    border: 1px solid var(--fs-border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+    animation: popInDialog 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ===========================
+   Dialog Typography
+=========================== */
+.dialog h2 {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    color: var(--fs-gold, #d4af37);
+}
+
+.dialog p {
+    margin: 0;
+    /* Increased visibility: larger size, brighter color, slightly bolder */
+    font-size: 1.05rem;
+    text-align: center;
+    font-weight: 500;
+    color: var(--fs-text, #ffffff);
+    line-height: 1.6;
+}
+
+/* ===========================
+   Dialog Actions & Premium Buttons
+=========================== */
+.dialog-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dialog-actions button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Secondary Button (Cancel) */
+
+.btn-secondary{
+    background: transparent;
+    border: 1px solid rgb(187, 182, 182);
+    color: rgb(187, 182, 182);
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #ef4444;
+}
+.btn-danger:hover {
+    background: #bd0808;
+    color: #000000;
+    border-color: #a80303;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.dialog-actions .btn-confirm:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* Mobile full-width buttons */
+@media (max-width: 480px) {
+    .dialog-actions {
+        flex-direction: column;
+    }
+    
+    .dialog-actions button {
+        width: 100%;
+    }
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popInDialog {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px) scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}

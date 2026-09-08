@@ -1,0 +1,168 @@
+.dashboard-metric-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 145px;
+
+    padding: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+
+    background: var(--fs-surface);
+    color: var(--fs-text);
+
+    font: inherit;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.dashboard-metric-card:hover {
+    transform: translateY(-2px);
+}
+
+.dashboard-metric-card:active {
+    transform: translateY(0);
+}
+
+.dashboard-metric-card:focus-visible {
+    outline: 2px solid var(--fs-gold);
+    outline-offset: 2px;
+}
+
+
+/* ================================
+   Label
+================================ */
+
+.dashboard-metric-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    color: var(--fs-text-muted);
+}
+
+
+/* ================================
+   Main value
+================================ */
+
+.dashboard-metric-main {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    margin-top: 0.5rem;
+}
+
+.dashboard-metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.dashboard-metric-value strong {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.dashboard-metric-value span {
+    font-size: 0.8rem;
+    color: var(--fs-text-muted);
+}
+
+
+/* ================================
+   Trend
+================================ */
+
+.dashboard-metric-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    padding: 0.3rem 0.5rem;
+
+    border-radius: 999px;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.metric-trend-positive {
+    color: #4d791c;
+    background: #e9f4d9;
+}
+
+.metric-trend-negative {
+    color: #a83228;
+    background: #f8e1df;
+}
+
+.metric-trend-neutral {
+    color: var(--fs-text-muted);
+    background: var(--fs-bg);
+}
+
+
+/* ================================
+   Arrow
+================================ */
+
+.dashboard-metric-arrow {
+    position: absolute;
+
+    right: 1rem;
+    bottom: 1rem;
+
+    color: var(--fs-text-muted);
+
+    opacity: 0;
+    transform: translateX(-4px);
+
+    transition: 0.15s ease;
+}
+
+.dashboard-metric-card:hover .dashboard-metric-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 600px) {
+
+    .dashboard-metric-card {
+        min-height: 135px;
+        padding: 1rem;
+    }
+
+    .dashboard-metric-value strong {
+        font-size: 1.55rem;
+    }
+
+    .dashboard-metric-main {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+
+    .dashboard-metric-arrow {
+        opacity: 1;
+        transform: none;
+    }
+}

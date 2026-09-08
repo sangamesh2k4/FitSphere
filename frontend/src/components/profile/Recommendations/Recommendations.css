@@ -1,0 +1,112 @@
+/* =========================================================
+   BASE STYLES (MOBILE-FIRST)
+========================================================= */
+.recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Tighter gap for mobile */
+    width: 100%;
+}
+
+/* Updated to match the className in your JSX */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.section-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--fs-text, #ffffff);
+}
+
+.section-header p {
+    font-size: 0.85rem;
+    color: var(--fs-text-secondary, #a0a0a0);
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; 
+}
+
+.recommendation-item {
+    padding: 0.85rem 1rem;
+    background: var(--fs-surface, #1a1a1a);
+    border: 1px solid var(--fs-border, #333333);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.recommendations-empty {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    background: var(--fs-surface, #1a1a1a);
+    border: 1px dashed var(--fs-border, #333333);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.recommendations-empty h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.recommendations-empty p {
+    font-size: 0.85rem;
+    color: var(--fs-text-secondary, #a0a0a0);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   TABLET & DESKTOP (> 768px)
+========================================================= */
+@media (min-width: 768px) {
+    .recommendations {
+        gap: 1.5rem;
+    }
+
+    .section-header {
+        gap: 0.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-header p {
+        font-size: 0.95rem;
+    }
+
+    .recommendations-list {
+        gap: 1rem;
+    }
+
+    .recommendation-item {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .recommendations-empty {
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+    }
+
+    .recommendations-empty h3 {
+        font-size: 1.25rem;
+    }
+
+    .recommendations-empty p {
+        font-size: 0.95rem;
+    }
+}

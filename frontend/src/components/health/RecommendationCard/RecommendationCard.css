@@ -1,0 +1,20 @@
+.recommendation-card {
+    flex: 2;
+    background: var(--fs-surface-2); 
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recommendation-icon {
+    color: var(--fs-gold);
+    flex-shrink: 0;
+}
+
+.recommendation-text {
+    font-size: 12px;
+    color: var(--fs-text);
+}

@@ -1,0 +1,30 @@
+package com.sangamesh.Fitsphere.enums;
+
+public enum MovementPattern {
+    HORIZONTAL_PUSH,
+    VERTICAL_PUSH,
+    HORIZONTAL_PULL,
+    VERTICAL_PULL,
+
+    SHOULDER_ABDUCTION,
+    SHOULDER_FLEXION,
+    SHOULDER_EXTENSION,
+
+    HIP_HINGE,
+    SQUAT,
+    LUNGE,
+
+    ELBOW_FLEXION,
+    ELBOW_EXTENSION,
+
+    KNEE_FLEXION,
+    KNEE_EXTENSION,
+
+    ANKLE_PLANTARFLEXION,
+    ANKLE_DORSIFLEXION,
+    CORE_FLEXION,
+    CORE_ROTATION,
+    ANTI_ROTATION,
+
+    CARRY
+}

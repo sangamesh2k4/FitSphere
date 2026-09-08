@@ -1,0 +1,46 @@
+/* =========================================================
+   HEADER
+========================================================= */
+
+.macro-header {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.macro-section-label {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    margin-bottom: 0.75rem;
+    background: rgba(247, 181, 32, 0.08);
+    border: 1px solid rgba(247, 181, 32, 0.2);
+    border-radius: 999px;
+    color: #f7b520;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.macro-header h1 {
+  color: var(--fs-text);
+  font-size: 5rem; /* Increased from 3.0rem */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em; 
+  margin: 0 0 0.75rem 0;
+}
+
+.macro-header p {
+        color: var(--fs-muted);
+    font-size: 1.25rem;
+    margin:0 auto;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+@media (max-width: 768px) {
+    .macro-header h1 {
+        font-size: 2.4rem;
+    }
+}

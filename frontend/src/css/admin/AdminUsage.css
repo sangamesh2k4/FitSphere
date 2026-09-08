@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Admin Usage Page Styles (Adjusted Height, Variables Only, No Min-Width)
+   ========================================================================== */
+
+/* ── MAIN PAGE LAYOUT ── */
+.admin-usage-page {
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    padding-bottom: 5rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--fs-text);
+    background-color: var(--fs-bg);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.admin-usage-loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--fs-muted);
+    font-size: 1rem;
+}
+
+/* ── HEADER ── */
+.admin-usage-header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.admin-usage-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--fs-text);
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.admin-usage-header p {
+    color: var(--fs-muted);
+    margin: 0;
+    font-size: 1.95rem;
+    font-weight: 500;
+}
+
+/* ── TOP STAT CARDS GRID ── */
+.admin-usage-top-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .admin-usage-top-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.admin-usage-card {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 1.75rem 1.25rem; /* Increased vertical padding to make cards taller */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers card content */
+    gap: 0.75rem;
+    box-shadow: var(--fs-shadow);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-usage-card:hover {
+    border-color: var(--fs-gold);
+    box-shadow: var(--fs-shadow);
+}
+
+.admin-usage-card.dark-card {
+    background: var(--fs-text);
+    color: var(--fs-bg);
+    border-color: transparent;
+}
+
+.card-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--fs-muted);
+}
+
+.admin-usage-card.dark-card .card-label {
+    color: var(--fs-subtle);
+    opacity: 0.8;
+}
+
+.card-value {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* ── PANELS (EXERCISE & TODAY'S USAGE) ── */
+.admin-usage-panel {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--fs-shadow);
+}
+
+.panel-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.panel-header-row h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fs-muted);
+    margin: 0;
+}
+
+.panel-sub-right {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--fs-muted);
+}
+
+.muted-text {
+    color: var(--fs-subtle);
+}
+
+/* ── PROGRESS BAR ── */
+.progress-bar-container {
+    height: 10px;
+    background-color: var(--fs-surface-2);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--fs-green);
+    border-radius: 6px;
+    transition: width 0.5s ease-out;
+}
+
+.exercise-library-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    color: var(--fs-muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legend-item strong {
+    color: var(--fs-text);
+    font-weight: 700;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active-dot {
+    background-color: var(--fs-green);
+}
+
+.disabled-dot {
+    background-color: var(--fs-subtle);
+}
+
+/* ── TODAY'S USAGE METRICS ── */
+.today-usage-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .today-usage-metrics-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.metric-item {
+    background: var(--fs-surface-2);
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    padding: 1.25rem 0.75rem; /* Increased vertical height for metrics cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:10rem;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: border-color 0.2s ease;
+}
+
+.metric-item:hover {
+    border-color: var(--fs-gold);
+}
+
+.metric-value {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--fs-text);
+    line-height: 1;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.metric-label {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--fs-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+/* ── MOBILE DEVICE SPECIFIC REFINEMENTS (< 480px) ── */
+@media (max-width: 480px) {
+    .admin-usage-page {
+        padding: 0.75rem 0.5rem calc(var(--bottom-nav-height, 5.5rem) + 1.25rem) 0.5rem;
+    }
+
+    .admin-usage-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .admin-usage-header p {
+        font-size: 0.9rem;
+    }
+
+    .card-value {
+        font-size: 2.25rem;
+    }
+
+    .metric-item {
+        height: 6.5rem;
+        padding: 0.75rem 0.25rem;
+    }
+
+    .metric-value {
+        font-size: 1.85rem;
+    }
+
+    .metric-label {
+        font-size: 0.75rem;
+    }
+    .panel-header-row h2{
+        font-size: 1.05rem;
+    }
+}

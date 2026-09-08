@@ -1,0 +1,151 @@
+.contact-page {
+  min-height: calc(100vh - 70px);
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 760px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.contact-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--fs-gold);
+}
+
+.contact-header h1 {
+  margin: 10px 0 12px;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--fs-text);
+}
+
+.contact-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--fs-muted);
+}
+
+.contact-card {
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid var(--fs-border);
+  background: var(--fs-surface);
+  box-shadow: var(--fs-shadow);
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.contact-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fs-text);
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  background: var(--fs-bg); /* Using the deeper background for inputs looks great inside the surface card */
+  color: var(--fs-text);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: var(--fs-subtle);
+}
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+  border-color: var(--fs-gold);
+}
+
+.contact-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.required-mark {
+  font-weight: 700;
+  color: var(--fs-red);
+}
+
+.contact-error,
+.contact-success {
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.contact-error {
+  background: var(--fs-red-bg);
+  color: var(--fs-red-text);
+  border: 1px solid rgba(220, 38, 38, 0.2); /* Slight border for definition */
+}
+
+.contact-success {
+  /* Using your green hex but synthesizing a background since --fs-green-bg wasn't provided */
+  background: rgba(34, 197, 94, 0.1); 
+  color: var(--fs-green);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.contact-submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--fs-gold);
+  color: var(--fs-bg); /* Deep text on gold background ensures high contrast */
+}
+
+.contact-submit:hover:not(:disabled) {
+  background: var(--fs-gold-dim);
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 45px 16px;
+  }
+
+  .contact-header h1 {
+    font-size: 34px;
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+}

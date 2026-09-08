@@ -1,0 +1,114 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content.large {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  height: 80vh; /* Fixed height for scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  color: var(--fs-text);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--fs-gold);
+}
+
+.exercise-results {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 0.5rem; /* space for scrollbar */
+}
+
+/* Custom scrollbar for webkit */
+.exercise-results::-webkit-scrollbar {
+  width: 6px;
+}
+.exercise-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+.exercise-results::-webkit-scrollbar-thumb {
+  background: var(--fs-border);
+  border-radius: 10px;
+}
+
+.exercise-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.exercise-result-item:hover {
+  border-color: var(--fs-gold);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.exercise-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.exercise-info strong {
+  font-size: 1.05rem;
+}
+
+.exercise-target {
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.loading-text, .empty-text {
+  text-align: center;
+  color: var(--fs-muted);
+  padding: 2rem 0;
+  font-family: 'JetBrains Mono', monospace;
+}

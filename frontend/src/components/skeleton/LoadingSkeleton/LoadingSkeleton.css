@@ -1,0 +1,54 @@
+.loading-skeleton {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.loading-skeleton-line {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--fs-surface-2);
+    border: 1px solid var(--fs-border);
+    border-radius: 6px;
+}
+
+.loading-skeleton-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+    animation: loading-skeleton-shimmer 1.5s infinite;
+}
+
+.loading-skeleton-title {
+    width: 35%;
+    height: 28px;
+    margin-bottom: 1rem;
+}
+
+.loading-skeleton-text {
+    width: 75%;
+    height: 16px;
+    margin-bottom: 0.75rem;
+}
+
+.loading-skeleton-text.short {
+    width: 50%;
+}
+
+@keyframes loading-skeleton-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loading-skeleton-line::after {
+        animation: none;
+    }
+}

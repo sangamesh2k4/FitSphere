@@ -1,0 +1,106 @@
+/* ==========================================
+   Food Detail Page Layout Only
+========================================== */
+
+/* ── MAIN WRAPPER ── */
+.food-detail-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--fs-bg);
+  color: var(--fs-text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── GRID & STICKY SIDEBAR ── */
+.detail-main {
+  /* Wrapper for the grid if needed for future top/bottom padding */
+  width: 100%;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 3rem;
+  align-items: start; /* Prevents the sidebar from stretching vertically */
+}
+
+.detail-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px; /* Distance from the top of the viewport */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: fit-content; 
+  z-index: 10;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── 404 / ERROR STATE (Rendered directly in FoodDetail) ── */
+.empty-state {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 16px;
+  color: var(--fs-muted);
+  max-width: 600px;
+  margin: 4rem auto;
+}
+
+.empty-state h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: var(--fs-gold);
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+.empty-state .back-button {
+  margin-top: 2rem;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  color: var(--fs-gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0;
+}
+
+.empty-state .back-button:hover {
+  color: var(--fs-text);
+}
+
+/* ── RESPONSIVE PAGE LAYOUT ── */
+@media (max-width: 1024px) {
+  .detail-grid {
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-sidebar {
+    position: static; /* Disable sticky positioning so it scrolls naturally above content */
+  }
+}
+
+@media (max-width: 600px) {
+  .food-detail-wrapper {
+    padding: 1rem;
+  }
+}

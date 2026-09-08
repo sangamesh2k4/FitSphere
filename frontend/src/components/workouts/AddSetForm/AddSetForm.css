@@ -1,0 +1,139 @@
+/* AddSetForm.css */
+
+.add-set-form {
+    padding: 0 1.25rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Label */
+
+.add-set-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--fs-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Inputs */
+
+.add-set-inputs {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add-set-inputs input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+
+    background: var(--fs-surface);
+    color: var(--fs-text);
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+/* Placeholder */
+
+.add-set-inputs input::placeholder {
+    color: var(--fs-muted);
+    opacity: 0.8;
+}
+
+/* Focus */
+
+.add-set-inputs input:focus {
+    border-color: var(--fs-gold);
+
+    box-shadow:
+        0 0 0 2px rgba(212, 175, 55, 0.12);
+}
+
+/* Hover */
+
+.add-set-inputs input:hover:not(:disabled) {
+    border-color: var(--fs-muted);
+}
+
+/* Disabled */
+
+.add-set-inputs input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--fs-background);
+}
+
+/* Remove number input arrows */
+
+.add-set-inputs input::-webkit-outer-spin-button,
+.add-set-inputs input::-webkit-inner-spin-button {
+    margin: 0;
+}
+
+
+/* Log Set Button */
+
+.btn-log-set {
+    width: 100%;
+
+    background: var(--fs-gold);
+    color: var(--fs-surface);
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 0.75rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hover */
+
+.btn-log-set:hover:not(:disabled) {
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transform: translateY(-1px);
+}
+
+/* Active */
+
+.btn-log-set:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Disabled */
+
+.btn-log-set:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}

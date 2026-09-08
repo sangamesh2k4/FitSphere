@@ -1,0 +1,17 @@
+.meal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.meal-list-header {
+    /* Let the flex gap handle the spacing below the header */
+    margin-bottom: 0; 
+}
+
+.meal-list-header h2 {
+    margin: 0; /* Reset default browser margins */
+    color: var(--fs-text);
+    font-size: 1.5rem;
+}

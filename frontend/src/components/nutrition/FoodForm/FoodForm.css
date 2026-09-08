@@ -1,0 +1,156 @@
+/* ==========================================
+   1. FORM CONTAINER & LAYOUT
+========================================== */
+.food-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.food-form {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.food-form h3 {
+    margin: 0 0 1.5rem 1rem;
+    color: var(--fs-text, #111827);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+/* ==========================================
+   2. FORM GROUPS & INPUTS
+========================================== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--fs-muted, #6b7280);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select {
+    background: var(--fs-surface-2, #f9fafb);
+    border: 1px solid var(--fs-border, #d1d5db);
+    color: var(--fs-text, #111827);
+    border-radius: 8px;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 800;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--fs-gold, #d97706);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   3. BUTTONS & ACTIONS
+========================================== */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.food-form .primary-btn,
+.food-form .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+/* Primary Button (Save) */
+.food-form .primary-btn {
+    background: var(--fs-gold, #d97706);
+    color: var(--fs-bg, #ffffff);
+    box-shadow: 0 2px 4px rgba(217, 119, 6, 0.2);
+}
+
+.food-form .primary-btn:hover:not(:disabled) {
+    background: #b45309; 
+    box-shadow: 0 4px 8px rgba(217, 119, 6, 0.3);
+    transform: translateY(-1px);
+}
+
+.food-form .primary-btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(217, 119, 6, 0.2);
+}
+
+/* Secondary Button (Cancel) */
+.food-form .secondary-btn {
+    background: transparent;
+    color: var(--fs-text, #374151);
+    border: 1px solid var(--fs-border, #d1d5db);
+}
+
+.food-form .secondary-btn:hover:not(:disabled) {
+    background: var(--fs-surface-2, #f3f4f6);
+    color: var(--fs-text, #111827);
+}
+
+.food-form .secondary-btn:active:not(:disabled) {
+    background: #e5e7eb;
+}
+
+.food-form .primary-btn:disabled,
+.food-form .secondary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ==========================================
+   4. RESPONSIVE BREAKPOINTS
+========================================== */
+@media (max-width: 550px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,40 @@
+.measurement-card {
+  background-color: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.measurement-card:hover {
+  border-color: var(--fs-gold);
+  transform: translateY(-2px);
+}
+
+.measurement-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--fs-text);
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.measurement-value span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fs-muted);
+}
+
+.measurement-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fs-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,338 @@
+/* ================================
+   OVERLAY
+================================ */
+.exercise-detail-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+/* ================================
+   MODAL CONTAINER
+================================ */
+.exercise-detail-modal {
+    position: relative;
+    width: min(850px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    padding: 0;
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ================================
+   CLOSE BUTTON CONTAINER (Fixed)
+================================ */
+.modal-close-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1010;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    background: transparent;
+}
+
+/* ================================
+   CLOSE BUTTON
+================================ */
+.exercise-detail-modal-close {
+    position: relative;
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right: -1px;
+    border: 1px solid var(--fs-border);
+    border-radius: 10px;
+    background: var(--fs-surface);
+    color: var(--fs-text);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:var(--fs-gold) ;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.exercise-detail-modal-close:hover {
+    background: var(--fs-border);
+    transform: translateY(-1px);
+}
+
+/* ================================
+   CONTENT WRAPPER
+================================ */
+.exercise-detail-wrapper {
+    padding: 0;
+    margin: 2px;
+}
+
+/* ================================
+   HEADER
+================================ */
+.exercise-detail-modal .detail-header {
+    margin-bottom: 1.5rem;
+}
+
+.exercise-detail-modal .exercise-category {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--fs-muted);
+}
+
+.exercise-detail-modal .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.exercise-detail-modal .title-row h1 {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    color: var(--fs-text);
+    padding-right: 4rem;
+}
+
+/* ================================
+   FAVORITE BUTTON
+================================ */
+.exercise-detail-modal .favorite-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--fs-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.exercise-detail-modal .favorite-btn:hover {
+    border-color: var(--fs-muted);
+    color: var(--fs-text);
+}
+
+.exercise-detail-modal .favorite-btn.is-favorite {
+    color: var(--fs-danger, red);
+    border-color: var(--fs-danger, red);
+    background: rgba(255, 0, 0, 0.05);
+}
+
+/* ================================
+   BADGES
+================================ */
+.exercise-detail-modal .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* ================================
+   ADD TO WORKOUT BUTTON
+================================ */
+.exercise-detail-actions {
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.add-to-workout-button {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--fs-gold);
+    color: black;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.add-to-workout-button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.add-to-workout-button:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   MAIN CONTENT GRID
+================================ */
+.exercise-detail-modal .detail-main {
+    margin-top: 1rem;
+}
+
+.exercise-detail-modal .detail-grid {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+/* ================================
+   SIDEBAR & CONTENT
+================================ */
+.exercise-detail-modal .detail-sidebar,
+.exercise-detail-modal .detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.exercise-detail-modal .content-card {
+    padding: 0;
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.exercise-detail-modal .card-heading {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--fs-text);
+}
+
+.exercise-detail-modal .card-text {
+    margin: 0;
+    color: var(--fs-muted);
+    line-height: 1.6;
+}
+
+/* ================================
+   TIPS / MISTAKES / VIDEOS
+================================ */
+.exercise-detail-modal .tips-mistakes-grid,
+.exercise-detail-modal .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.exercise-detail-modal .videos-section {
+    margin-top: 2rem;
+}
+
+/* ================================
+   LOADING / ERROR
+================================ */
+.exercise-detail-modal-loading,
+.exercise-detail-modal-error {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--fs-muted);
+    text-align: center;
+}
+
+.exercise-detail-modal-error h2 {
+    margin-bottom: 0.5rem;
+    color: var(--fs-danger, red);
+}
+
+/* ================================
+   SCROLLBAR
+================================ */
+.exercise-detail-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.exercise-detail-modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.exercise-detail-modal::-webkit-scrollbar-thumb {
+    background: var(--fs-border);
+    border-radius: 10px;
+}
+
+.exercise-detail-modal::-webkit-scrollbar-thumb:hover {
+    background: var(--fs-muted);
+}
+
+/* ================================
+   MOBILE COMPATIBILITY
+================================ */
+@media (max-width: 768px) {
+    .exercise-detail-modal-overlay {
+        padding: 0;
+        align-items: center;
+    }
+
+    .exercise-detail-modal {
+        margin-left: 2px;
+        margin-right: 2px;
+        width: 100%;
+        max-height: 85vh;
+        height: auto;
+        padding: 0;
+        border: 1px solid var(--fs-border);
+        border-radius: 16px;
+    }
+
+    .modal-close-container {
+        top: 0.75rem;
+        right: 1rem;
+    }
+
+    .exercise-detail-wrapper {
+        padding: 0.5rem;
+        margin-top: 1px;
+    }
+
+    .exercise-detail-modal .title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .exercise-detail-modal .title-row h1 {
+        padding-right: 3rem;
+    }
+
+    .exercise-detail-modal .detail-grid,
+    .exercise-detail-modal .tips-mistakes-grid,
+    .exercise-detail-modal .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exercise-detail-actions {
+        width: 100%;
+    }
+
+    .add-to-workout-button {
+        width: 100%;
+        padding: 0;
+    }
+}

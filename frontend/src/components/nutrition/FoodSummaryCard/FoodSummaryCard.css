@@ -1,0 +1,93 @@
+.food-summary-card{
+
+    background:var(--fs-surface);
+
+    border:1px solid var(--fs-border);
+
+    border-radius:18px;
+
+    padding:2rem;
+
+    box-shadow:var(--fs-shadow);
+
+}
+
+.food-summary-title{
+
+    margin:0 0 2rem;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:2rem;
+
+    letter-spacing:.05em;
+
+}
+
+.food-summary-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+.food-summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-bottom:1rem;
+
+    border-bottom:1px solid var(--fs-border);
+
+}
+
+.food-summary-item:last-child{
+
+    border-bottom:none;
+
+    padding-bottom:0;
+
+}
+
+.summary-label{
+
+    color:var(--fs-text-secondary);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+}
+
+.summary-value{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:.3rem;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:2rem;
+
+    color:var(--fs-text);
+
+}
+
+.summary-unit{
+
+    font-size:.9rem;
+
+    color:var(--fs-text-secondary);
+
+    margin-bottom:.3rem;
+
+}

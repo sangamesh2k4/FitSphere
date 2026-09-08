@@ -1,0 +1,93 @@
+/* ==========================================
+   Food Log Card Component
+========================================== */
+
+.food-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--fs-surface, #ffffff);
+    border: 1px solid var(--fs-border, #e5e7eb);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.food-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Left side: Food Name and Quantity */
+.food-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.food-left h3 {
+    margin: 0;
+    color: var(--fs-text, #111827);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.food-left p {
+    margin: 0;
+    color: var(--fs-muted, #6b7280);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Right side: Calories Badge and Action Buttons */
+.food-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.food-calories {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--fs-text, #111827);
+    border: 1px solid var(--fs-border, #d1d5db);
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    background: var(--fs-surface-2, #f9fafb);
+}
+
+.food-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Action Icon Buttons */
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--fs-border, #d1d5db);
+    padding: 0.35rem;
+    border-radius: 6px;
+    color: var(--fs-text, #374151);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+    border-color: var(--fs-gold, #d97706);
+    color: var(--fs-gold, #d97706);
+    background: rgba(217, 119, 6, 0.05);
+}
+
+/* Delete Button Specific Hover Styling */
+.icon-btn.delete-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.08);
+}

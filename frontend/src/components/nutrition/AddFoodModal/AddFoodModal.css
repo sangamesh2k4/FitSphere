@@ -1,0 +1,70 @@
+/* ==========================================
+   Add Food Modal (Isolated Scoping)
+========================================== */
+
+.add-food-modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Correct background transparency overlay */
+    background: rgba(0, 0, 0, 0.55); 
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    z-index: 9999;
+    padding: 20px;
+}
+
+.add-food-modal {
+    width: min(700px, 100%);
+    max-height: 90vh;
+    
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    
+    overflow-y: auto;
+    position: relative;
+    z-index: 10000;
+    
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 24px 30px 16px;
+    background: var(--fs-surface);
+    border-bottom: 1px solid var(--fs-border);
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--fs-text);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--fs-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--fs-text);
+}
+
+/* Modal Error Display */
+.search-error {
+    margin: 0 30px 24px;
+    color: var(--fs-red, #ff4d4f);
+    font-size: 0.9rem;
+    text-align: center;
+}

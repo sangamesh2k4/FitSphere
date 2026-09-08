@@ -1,0 +1,209 @@
+.training-volume-card {
+    background-color: var(--fs-surface);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--fs-shadow);
+}
+
+.analytics-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.analytics-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--fs-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.period-toggle {
+    display: inline-flex;
+    background-color: var(--fs-bg);
+    border-radius: 20px;
+    padding: 3px;
+}
+
+.period-toggle button {
+    background: transparent;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fs-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.period-toggle button.active {
+    background-color: var(--fs-text);
+    color: var(--fs-bg);
+}
+
+/* Horizontal Summary Stats */
+.volume-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.volume-summary strong {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--fs-text);
+    line-height: 1;
+}
+
+.volume-change {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.volume-change.positive {
+    background-color: var(--fs-surface-2);
+    color: var(--fs-green);
+}
+
+.volume-change.negative {
+    background-color: var(--fs-red-bg);
+    color: var(--fs-red);
+}
+
+.previous-volume {
+    font-size: 13px;
+    color: var(--fs-muted);
+    margin-left: 4px;
+}
+
+/* Clean Bar Chart Canvas */
+.volume-chart-container {
+    width: 100%;
+    height: 300px;
+}
+
+.volume-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 100%;
+}
+
+.volume-bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+
+.volume-bar-area {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Bars styled with theme Gold */
+.volume-bar {
+    position: relative;
+    width: 100%;
+    background-color: var(--fs-gold);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.volume-bar:hover,
+.volume-bar.current:hover {
+    background-color: var(--fs-gold-dim);
+}
+
+.volume-bar.current {
+    background-color: var(--fs-gold);
+}
+
+/* Hover Tooltip */
+.volume-bar-tooltip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background-color: var(--fs-text);
+    color: var(--fs-bg);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.volume-bar:hover .volume-bar-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.volume-bar-label {
+    font-size: 11px;
+    color: var(--fs-muted);
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.chart-empty,
+.analytics-loading,
+.analytics-error {
+    font-size: 14px;
+    color: var(--fs-muted);
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .training-volume-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .volume-summary {
+        gap: 8px;
+    }
+
+    .volume-summary strong {
+        font-size: 26px;
+    }
+
+    .volume-chart {
+        gap: 6px;
+    }
+
+    .volume-bar-label {
+        font-size: 9px;
+    }
+
+    .volume-chart-container {
+        width: 100%;
+        height: 200px;
+    }
+}

@@ -1,0 +1,142 @@
+/* WorkoutSetRow.css */
+
+.set-card {
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 1rem;
+    background: var(--fs-surface);
+    transition: border-color 0.2s ease;
+}
+
+.set-card.editing {
+    border-color: var(--fs-gold);
+}
+
+.set-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.set-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.set-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.set-badge.pr-badge {
+    background: #e6f4ea;
+    color: #1e8e3e;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+.btn-edit-toggle {
+    background: transparent;
+    border: none;
+    color: var(--fs-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-edit-toggle:hover {
+    color: var(--fs-text);
+}
+
+.set-card-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.input-group label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--fs-muted);
+    text-transform: uppercase;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    background: var(--fs-surface);
+}
+
+.input-group input:disabled {
+    background: var(--fs-surface-2);
+    border-color: transparent;
+    color: var(--fs-text);
+    opacity: 0.8;
+}
+
+.set-card-metrics {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--fs-muted);
+}
+
+/* Adding margin if actions are visible below it */
+.set-card.editing .set-card-metrics {
+    margin-bottom: 1rem; 
+}
+
+.set-card-metrics strong {
+    color: var(--fs-text);
+}
+
+.set-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.btn-save-set {
+    flex: 1;
+    background: var(--fs-gold);
+    color: var(--fs-bg);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-delete-set {
+    flex: 1;
+    background: transparent;
+    color: var(--fs-red);
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

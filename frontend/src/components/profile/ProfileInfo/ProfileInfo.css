@@ -1,0 +1,49 @@
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-info-header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.profile-info-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.profile-info-header p {
+    color: var(--fs-text-secondary);
+}
+
+.profile-info-card {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.profile-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--fs-border);
+}
+
+.profile-info-row:last-child {
+    border-bottom: none;
+}
+
+.profile-info-label {
+    color: var(--fs-text-secondary);
+    font-weight: 500;
+}
+
+.profile-info-value {
+    font-weight: 600;
+    color: var(--fs-text);
+}

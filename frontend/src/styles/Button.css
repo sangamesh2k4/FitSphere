@@ -1,0 +1,49 @@
+/* --- BUTTONS --- */
+.primary-button,
+.secondary-button,
+.login-button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+/* Primary: Solid Gold */
+.primary-button {
+  background: var(--fs-gold);
+  color: var(--fs-bg);
+  border: none;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  background: #e6ac36; 
+}
+
+/* Secondary & Login: Outline Gold */
+.secondary-button,
+.login-button {
+  background: transparent;
+  border-color: var(--fs-gold);
+  color: var(--fs-gold);
+}
+
+.secondary-button:hover,
+.login-button:hover {
+  transform: translateY(-2px);
+  background: var(--fs-gold);
+  color: var(--fs-bg);
+}
+
+/* Mobile Button adjustments */
+@media (max-width: 600px) {
+  .primary-button,
+  .secondary-button {
+    padding: 10px 16px;
+  }
+}

@@ -1,0 +1,87 @@
+.profile-header-section {
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--fs-shadow); /* Swapped hardcoded shadow for theme variable */
+}
+
+.profile-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.profile-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.profile-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fs-muted);
+}
+
+.profile-header-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--fs-text);
+    margin: 0;
+}
+
+.profile-header-text p {
+    color: var(--fs-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.edit-profile-btn {
+    display: block;          
+    margin: 1.5rem auto 0;  
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--fs-gold); /* Updated to use theme accent color */
+    border-radius: 8px;
+    background: transparent;
+    color: var(--fs-gold); /* Updated to use theme accent color */
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    background: var(--fs-gold); /* Replaced missing --fs-primary */
+    color: var(--fs-bg); /* Replaced hardcoded white to adapt to light/dark themes */
+    border-color: var(--fs-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--fs-gold-bg); /* Added theme glow effect */
+}
+
+.profile-meta-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures it stays centered under the button */
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--fs-border);
+}
+
+.profile-meta-info .label {
+    color: var(--fs-muted);
+}
+
+.profile-meta-info .value {
+    font-weight: 600;
+    color: var(--fs-text);
+}

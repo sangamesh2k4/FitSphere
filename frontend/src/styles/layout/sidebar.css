@@ -1,0 +1,248 @@
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 242px;
+    min-width: 240px;
+    height: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--fs-surface);
+    border-right: 1px solid var(--fs-border);
+}
+
+/* ==========================================
+   SIDEBAR HEADER
+========================================== */
+
+.sidebar-header {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    position: relative; /* Added to allow absolute centering of the logo */
+
+    padding: 0 16px;
+
+    border-bottom: 1px solid var(--fs-border);
+}
+
+.sidebar-logo {
+    position: absolute; /* Centers the logo within the header */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-logo h2 {
+    margin: 0;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-right: 25px;
+    color: var(--fs-gold);
+    text-align: center;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.sidebar-nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 16px;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+
+    padding: 0 18px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: var(--fs-muted);
+
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: .2px;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.sidebar-link:hover {
+    background: var(--fs-surface-2);
+    color: var(--fs-text);
+}
+
+.sidebar-link span {
+    position: relative;
+    display: inline-block;
+}
+
+.sidebar-link span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--fs-gold);
+
+    border-radius: 999px;
+
+    transition: width .25s ease;
+}
+
+.sidebar-link:hover span::after,
+.sidebar-link.active span::after {
+    width: 100%;
+}
+
+.sidebar-link.active {
+    background: var(--fs-surface-2);
+    color: var(--fs-text);
+    font-weight: 700;
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.sidebar hr {
+    border: none;
+    border-top: 1px solid var(--fs-border);
+    margin: 20px 0;
+}
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout-button {
+    margin-top: auto;
+
+    height: 48px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: var(--fs-muted);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.logout-button:hover {
+    background: var(--fs-surface-2);
+    color: var(--fs-red);
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+/* Hide the close button on desktop */
+.sidebar-close {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+
+        width: 260px;
+        min-width: 260px;
+        height: 100vh;
+
+        z-index: 1001;
+
+        transition: left .3s ease;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    /* Show the close button on mobile */
+    .sidebar-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        margin-left: auto; /* Pushes the close button to the far right */
+        z-index: 2; /* Ensures it stays clickable above the absolute centered logo */
+
+        width: 42px;
+        height: 42px;
+
+        border: none;
+        border-radius: 10px;
+
+        background: transparent;
+        color: var(--fs-text);
+
+        cursor: pointer;
+
+        transition:
+            background .2s ease,
+            color .2s ease,
+            transform .2s ease;
+    }
+
+    .sidebar-close:hover {
+        background: var(--fs-surface-2);
+        color: var(--fs-gold);
+        transform: rotate(90deg);
+    }
+
+    .sidebar-logo h2 {
+        font-size: 2.3rem;
+    }
+}

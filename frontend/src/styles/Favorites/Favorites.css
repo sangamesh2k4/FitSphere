@@ -1,0 +1,128 @@
+/* --- PAGE CONTAINER --- */
+.favorites-page {
+    padding: 1rem 0; 
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centers the container if the screen is wider than 1400px */
+}
+
+.favorites-header {
+    margin-bottom: 1.5rem;
+}
+
+.favorites-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.favorites-header p {
+    margin-top: .5rem;
+    color: var(--fs-muted);
+}
+
+/* --- TOGGLE BUTTONS --- */
+.favorites-toggle {
+    display: flex;
+    gap: 0.5rem; 
+    width: fit-content;
+    margin-bottom: 1.5rem; 
+}
+
+.favorites-toggle button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.95rem 5rem; 
+    border: none;
+    border-radius: 12px;
+    background: var(--fs-surface);
+    color: var(--fs-muted);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.favorites-toggle button:hover {
+    background: var(--fs-border);
+}
+
+.favorites-toggle button.active {
+    background: var(--fs-text); 
+    color: var(--fs-bg); 
+    font-weight: 600;
+}
+
+/* --- DYNAMIC & FLUID GRID (STRICTLY 2 COLUMNS) --- */
+.favorites-grid {
+    display: grid;
+    /* Forces exactly 2 columns. 1fr allows them to stretch to fill the screen */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.skeleton-card {
+    width: 100%; /* Critical: Remove any fixed width like 350px or 400px */
+    box-sizing: border-box;
+    
+    /* Keep your existing skeleton background/animation styles below */
+    background: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+/* --- EMPTY STATE --- */
+.favorites-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    border: 1px dashed var(--fs-border);
+    border-radius: 16px;
+    background: var(--fs-surface);
+}
+
+.favorites-empty h2 {
+    margin-bottom: .75rem;
+}
+
+.favorites-empty p {
+    color: var(--fs-muted);
+    text-align: center;
+    max-width: 400px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Tablet & Mobile Grid Collapse */
+@media (max-width: 850px) {
+    .favorites-grid {
+        /* Stacks to 1 column so the 2-column layout doesn't get too squished on tablets */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Specific Rules */
+@media (max-width: 600px) {
+    /* Center the toggle container */
+    .favorites-toggle {
+        margin: 0 auto 1.5rem auto;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Force buttons to take equal width and fit the screen */
+    .favorites-toggle button {
+        flex: 1;
+        padding: 0.95rem 1rem; 
+    }
+
+    .favorites-empty {
+        padding: 2rem 1rem;
+    }
+}

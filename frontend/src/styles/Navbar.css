@@ -1,0 +1,638 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: var(--fs-bg);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--fs-border);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+    margin: 0;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+
+    color: var(--fs-gold);
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* Only TOP LEVEL navbar links */
+
+.navbar-links > a,
+.nav-dropdown-trigger {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: var(--fs-muted);
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+
+.navbar-links > a:hover,
+.nav-dropdown-trigger:hover {
+    color: var(--fs-text);
+}
+
+
+/* Gold underline */
+
+.navbar-links > a::after,
+.nav-dropdown-trigger::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--fs-gold);
+
+    transition: width 0.25s ease;
+}
+
+
+.navbar-links > a:hover::after,
+.nav-dropdown:hover .nav-dropdown-trigger::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAVBAR ACTIONS
+========================================================= */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.05rem;
+}
+
+
+/* =========================================================
+   TOOLS DROPDOWN
+========================================================= */
+
+.nav-dropdown {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Tools button */
+
+.nav-dropdown-trigger {
+    gap: 0.35rem;
+}
+
+
+/* Chevron */
+
+.nav-dropdown-trigger svg {
+    width: 14px;
+    height: 14px;
+
+    stroke-width: 2;
+
+    transition: transform 0.2s ease;
+}
+
+
+.nav-dropdown:hover .nav-dropdown-trigger svg {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.nav-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 18px);
+    left: 50%;
+
+    width: 285px;
+
+    padding: 0.5rem;
+
+    background: var(--fs-surface);
+
+    border: 1px solid var(--fs-border);
+    border-radius: 12px;
+
+    box-shadow: var(--fs-shadow);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(-50%) translateY(-6px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+
+    z-index: 1000;
+}
+
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* Invisible bridge prevents dropdown closing */
+
+.nav-dropdown-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: -20px;
+    left: 0;
+
+    width: 100%;
+    height: 20px;
+}
+
+
+/* =========================================================
+   DROPDOWN ITEMS
+========================================================= */
+
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    padding: 0.8rem;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: background 0.15s ease;
+}
+
+
+.nav-dropdown-item:hover {
+    background: var(--fs-surface-2);
+}
+
+
+/* Icon */
+
+.nav-dropdown-item > svg {
+    flex-shrink: 0;
+
+    width: 17px;
+    height: 17px;
+
+    color: var(--fs-gold);
+}
+
+
+/* Text */
+
+.nav-dropdown-item div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.15rem;
+}
+
+
+.nav-dropdown-item strong {
+    color: var(--fs-text);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+
+.nav-dropdown-item span {
+    color: var(--fs-muted);
+
+    font-size: 0.65rem;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   VIEW ALL TOOLS
+========================================================= */
+
+.nav-dropdown-divider {
+    height: 1px;
+
+    margin: 0.4rem 0;
+
+    background: var(--fs-border);
+}
+
+
+.nav-view-all {
+    display: block;
+
+    padding: 0.65rem 0.8rem;
+
+    color: var(--fs-gold);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.nav-view-all:hover {
+    color: var(--fs-gold);
+    background: var(--fs-gold-bg);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 64px;
+    }
+
+    .navbar-actions {
+        gap: 0.5rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+}
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-menu-button {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    background: transparent;
+    color: var(--fs-text);
+
+    border: 1px solid var(--fs-border);
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+    color: var(--fs-gold);
+    border-color: var(--fs-gold);
+    background: var(--fs-gold-bg);
+}
+
+
+/* Hidden by default */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    /* Hide desktop navigation */
+
+    .navbar-links,
+    .navbar-actions {
+        display: none;
+    }
+
+
+    /* Show hamburger */
+
+    .mobile-menu-button {
+        display: flex;
+    }
+
+
+    /* Mobile dropdown */
+
+    .mobile-menu {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 1rem 5% 1.4rem;
+
+        box-sizing: border-box;
+
+        background: var(--fs-bg);
+
+        border-bottom: 1px solid var(--fs-border);
+
+        backdrop-filter: blur(16px);
+
+        box-shadow: var(--fs-shadow);
+    }
+
+
+    .mobile-menu.mobile-menu-open {
+        display: block;
+
+        animation: mobileMenuEnter 0.2s ease forwards;
+    }
+
+
+    /* Main links */
+
+    .mobile-menu-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .mobile-menu-links > a,
+    .mobile-tools-trigger {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+
+        padding: 0.95rem 0.2rem;
+
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--fs-border);
+
+        color: var(--fs-muted);
+
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        text-align: left;
+        text-decoration: none;
+
+        cursor: pointer;
+
+        transition: color 0.2s ease;
+    }
+
+
+    .mobile-menu-links > a:hover,
+    .mobile-tools-trigger:hover {
+        color: var(--fs-text);
+    }
+
+
+    /* Tools arrow */
+
+    .mobile-tools-trigger svg {
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-tools-arrow-open {
+        transform: rotate(180deg);
+    }
+
+
+    /* =====================================================
+       MOBILE TOOL ITEMS
+    ===================================================== */
+
+    .mobile-tools-menu {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0.45rem 0 0.45rem 0.6rem;
+
+        border-bottom: 1px solid var(--fs-border);
+    }
+
+
+    .mobile-tools-menu > a {
+        display: flex;
+        align-items: center;
+
+        gap: 0.8rem;
+
+        padding: 0.75rem;
+
+        color: var(--fs-text);
+
+        border-radius: 8px;
+
+        text-decoration: none;
+
+        transition: background 0.15s ease;
+    }
+
+
+    .mobile-tools-menu > a:hover {
+        background: var(--fs-surface-2);
+    }
+
+
+    .mobile-tools-menu > a > svg {
+        flex-shrink: 0;
+
+        color: var(--fs-gold);
+    }
+
+
+    .mobile-tools-menu > a div {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0.15rem;
+    }
+
+
+    .mobile-tools-menu strong {
+        color: var(--fs-text);
+
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+
+    .mobile-tools-menu span {
+        color: var(--fs-muted);
+
+        font-size: 0.65rem;
+        font-weight: 400;
+    }
+
+
+    /* =====================================================
+       MOBILE LOGIN / REGISTER
+    ===================================================== */
+
+    .mobile-menu-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.75rem;
+
+        padding-top: 1.2rem;
+    }
+
+
+    .mobile-menu-actions button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 64px;
+        padding: 0 1rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+
+    .mobile-menu {
+        padding:
+            0.75rem
+            1rem
+            1.2rem;
+    }
+
+    .mobile-menu-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE MENU ANIMATION
+========================================================= */
+
+@keyframes mobileMenuEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

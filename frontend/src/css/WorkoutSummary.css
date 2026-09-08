@@ -1,0 +1,141 @@
+.workout-summary-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.summary-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.summary-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.summary-date {
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.summary-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--fs-gold);
+}
+
+.exercises-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--fs-border);
+  padding-bottom: 0.5rem;
+}
+
+.summary-exercise-card {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.summary-exercise-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.exercise-order {
+  color: var(--fs-muted);
+  margin-right: 0.5rem;
+}
+
+.exercise-volume-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--fs-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--fs-muted);
+}
+
+.summary-sets-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-sets-header, .summary-set-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.summary-sets-header {
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--fs-border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-set-row {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+.set-number {
+  color: var(--fs-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.no-sets-text {
+  color: var(--fs-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .summary-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,195 @@
+.settings-page {
+    margin: 0 auto;
+}
+
+.settings-header {
+    margin-bottom: 2rem;
+}
+
+.settings-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.settings-header p {
+    color: var(--fs-text-secondary);
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.settings-card{
+
+    background:var(--fs-surface);
+
+    border:1px solid var(--fs-border);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.settings-card-header{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1.6rem;
+
+    color:inherit;
+}
+
+.settings-card-header h2{
+    margin-left: 2rem;
+    font-size:1.8rem;
+
+    font-weight:700;
+}
+
+.settings-card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+
+.settings-card-content > div {
+    overflow: hidden;
+}
+
+.settings-card.expanded .settings-card-content {
+    grid-template-rows: 1fr;
+}
+
+.settings-card-content input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    border: 1px solid var(--fs-border);
+    border-radius: 8px;
+}
+
+.settings-card-content button {
+    margin-top: 16px;
+}
+.settings-card.expanded .settings-card-content{
+
+    max-height:800px;
+  
+    padding:0 1.6rem 1.6rem;
+}
+.username-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:.6rem;
+}
+
+.username-header span{
+
+    font-size:.85rem;
+
+    color:var(--fs-text-secondary);
+}
+
+.username-rules{
+
+    margin-top:.8rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.3rem;
+
+    font-size:1.2rem;
+
+    color:var(--fs-text-secondary);
+}
+
+.checking-message{
+
+    color:#f59e0b;
+
+    margin-top:.8rem;
+}
+
+.success-message{
+
+    color:#22c55e;
+
+    margin-top:.8rem;
+}
+
+.error-message{
+
+    color:#ef4444;
+
+    margin-top:.8rem;
+}
+.appearance-options{
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-top:1rem;
+}
+
+.theme-option{
+
+    flex:1;
+
+    padding:1rem;
+
+    background:var(--fs-surface-2);
+
+    border:1px solid var(--fs-border);
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.6rem;
+
+    color:var(--fs-text);
+
+    transition:.25s;
+}
+
+.theme-option:hover{
+
+    border-color:var(--fs-gold);
+}
+
+.theme-option.active{
+
+    border:2px solid var(--fs-gold);
+
+    background:var(--fs-gold-bg);
+}

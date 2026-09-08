@@ -1,0 +1,191 @@
+/* =========================================================
+   MACRO RESULT DATA
+========================================================= */
+
+.macro-result {
+    margin-top: 2.15rem;
+    background-color: var(--fs-surface);
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    padding: 1.5rem; /* Added padding to ensure content doesn't hit borders */
+}
+
+.macro-result-header {
+    margin-bottom: 1.3rem;
+    text-align: center;
+}
+
+.macro-result-header span {
+    color: var(--fs-gold);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.macro-result-header h2 {
+    margin: 0.25rem 0;
+    color: var(--fs-text);
+    font-size: 1.15rem;
+}
+
+.macro-result-header p {
+    margin: 0;
+    color: var(--fs-muted);
+    font-size: 0.75rem;
+}
+
+.primary-nutrients {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+}
+
+.nutrient-card {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--fs-surface-2);
+    border: 1px solid var(--fs-border);
+    border-radius: 11px;
+}
+
+.nutrient-card strong {
+    margin-top: 0.55rem;
+    color: var(--fs-text);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.nutrient-card span {
+    margin-top: 0.3rem;
+    color: var(--fs-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.nutrient-card small {
+    margin-top: 0.15rem;
+    color: var(--fs-subtle);
+    font-size: 0.62rem;
+}
+
+/* Mapped distinct nutrient colors to existing theme variables */
+.calories-nutrient svg {
+    color: var(--fs-gold); 
+}
+
+.protein-nutrient svg {
+    color: var(--fs-red-text); 
+}
+
+.carbs-nutrient svg {
+    color: var(--fs-gold-dim); 
+}
+
+.fat-nutrient svg {
+    color: var(--fs-green);
+}
+
+.secondary-nutrients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1rem;
+    border: 1px solid var(--fs-border);
+    border-radius: 11px;
+    overflow: hidden;
+}
+
+.secondary-nutrient {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    background-color: var(--fs-surface-2);
+    border-right: 1px solid var(--fs-border);
+    border-bottom: 1px solid var(--fs-border);
+}
+
+.secondary-nutrient svg {
+    color: var(--fs-muted);
+}
+
+.secondary-nutrient span {
+    color: var(--fs-muted);
+    font-size: 0.72rem;
+}
+
+.secondary-nutrient strong {
+    color: var(--fs-text);
+    font-size: 0.75rem;
+}
+
+/* =========================================================
+   ACTION BUTTON (VIEW ALL NUTRIENTS)
+========================================================= */
+
+.macro-result-actions {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--fs-border);
+    display: flex;
+    justify-content: center;
+}
+
+.view-full-nutrients-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    
+    background-color: var(--fs-gold-bg);
+    border: 1px solid var(--fs-gold-dim);
+    border-radius: 8px;
+    
+    color: var(--fs-gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-full-nutrients-btn:hover {
+    background-color: var(--fs-gold);
+    color: var(--fs-bg);
+    border-color: var(--fs-gold);
+    transform: translateY(-2px);
+}
+
+.view-full-nutrients-btn i {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.view-full-nutrients-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 768px) {
+    .primary-nutrients {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .secondary-nutrients {
+        grid-template-columns: 1fr;
+    }
+    
+    .secondary-nutrient {
+        border-right: none;
+    }
+}

@@ -1,0 +1,226 @@
+/* --- HEADER SECTION --- */
+.exercise-library-header {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: center; /* Centers all inline text */
+  
+  /* Centers the entire header block horizontally */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px; /* Widened slightly to fit the larger text */
+}
+
+/* The "FITSPHERE EXERCISES" overline */
+.section-label {
+  color: var(--fs-gold); 
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem; /* Increased from 0.85rem */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* The "Explore Exercises" Title */
+.exercise-library-header h1 {
+  color: var(--fs-text);
+  font-size: 5rem; /* Increased from 3.0rem */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em; 
+  margin: 0 0 0.75rem 0;
+}
+
+/* The descriptive paragraph */
+.exercise-library-header p:not(.section-label) {
+  color: var(--fs-muted);
+  font-size: 1.25rem; /* Increased from 1.1rem */
+  line-height: 1.6;
+  
+  /* Crucial: Centers the paragraph block within the header container */
+  margin: 0 auto; 
+  max-width: 700px; 
+}
+
+/* --- MOBILE RESPONSIVE (TABLET & PHONE) --- */
+@media (max-width: 768px) {
+  .exercise-library-header {
+    margin-bottom: 2rem;
+  }
+  
+  .exercise-library-header h1 {
+    font-size: 2.5rem; /* Increased for mobile */
+  }
+
+  .exercise-library-header p:not(.section-label) {
+    font-size: 1.1rem; /* Increased for mobile */
+  }
+}
+/* --- FILTER BAR CONTAINER --- */
+.exercise-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Slightly tighter gap for a cohesive look */
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+/* --- SHARED INPUT & SELECT STYLES --- */
+.exercise-filters input,
+.exercise-filters select,
+.exercise-filters button {
+  height: 48px;
+  padding: 0 16px;
+  
+  background: var(--fs-surface);
+  color: var(--fs-text);
+  
+  border: 1px solid var(--fs-border);
+  border-radius: 12px; /* Slightly softer, more modern radius */
+  
+  font-size: 0.95rem;
+  font-family: inherit;
+  
+  /* Smooth transitions for a premium feel */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* --- SEARCH INPUT --- */
+.exercise-filters input {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* --- DROPDOWNS --- */
+.exercise-filters select {
+  min-width: 160px;
+  cursor: pointer;
+  
+  /* Remove default browser styling */
+  appearance: none; 
+  -webkit-appearance: none;
+  
+  /* Custom modern chevron arrow */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23888888%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5rem; /* Prevent text from overlapping the arrow */
+}
+
+/* --- HOVER & FOCUS STATES --- */
+.exercise-filters input:hover,
+.exercise-filters select:hover {
+  border-color: rgba(255, 255, 255, 0.3); /* Subtle brightening on hover */
+}
+
+.exercise-filters input:focus,
+.exercise-filters select:focus {
+  outline: none;
+  border-color: var(--fs-gold);
+  /* Adds a soft glowing ring matching the border color */
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15); 
+}
+
+/* --- CLEAR FILTERS BUTTON --- */
+.exercise-filters button.secondary-button {
+  background: transparent;
+  color: var(--fs-muted);
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.exercise-filters button.secondary-button:hover {
+  color: var(--fs-text);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--fs-border);
+}
+
+/* --- NATURAL LANGUAGE COUNT --- */
+.exercise-count {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: var(--fs-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  /* Removed monospace and heavy letter spacing to make it read like normal prose */
+}
+
+/* --- UI STATES --- */
+.loading-state {
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--fs-gold); /* Accent color for the loader */
+  font-family: 'JetBrains Mono', monospace;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.empty-state {
+  padding: 5rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  background: var(--fs-surface);
+  border-radius: 16px;
+  border: 1px dashed var(--fs-border); /* Dotted border creates a distinct "dropzone/empty" feel */
+}
+
+.empty-state h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--fs-muted);
+  font-size: 1.1rem;
+}
+
+/* --- EXERCISE GRID LAYOUT (DESKTOP) --- */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row on laptop/computer */
+  gap: 0.3rem; 
+  margin-top: 0.5rem; 
+}
+
+/* --- RESPONSIVE MOBILE GRID (TABLET & PHONE) --- */
+@media (max-width: 768px) {
+  .exercise-library-header h1 {
+    margin-top: -1.7rem; /* Slightly reduced top margin for mobile */
+  }
+
+  /* Filters Responsive */
+  .exercise-filters {
+    gap: 10px;
+  }
+
+  .exercise-filters input {
+    width: 100%;
+    order: 1; /* Forces search to the top */
+  }
+
+  .exercise-filters select {
+    flex: 1;
+    min-width: calc(50% - 5px); /* Creates a neat 2-column grid for dropdowns */
+    order: 2;
+  }
+
+  .exercise-filters button {
+    width: 100%;
+    order: 3;
+    border: 1px solid var(--fs-border); /* Give it a visible boundary on mobile */
+  }
+  
+  /* Grid Responsive */
+  .exercise-grid {
+     grid-template-columns: repeat(2, 1fr); /* 1 card per row on tab/phone */
+  }
+  
+}

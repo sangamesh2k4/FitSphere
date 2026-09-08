@@ -1,0 +1,250 @@
+/* ── WORKOUT SUMMARY PAGE ── */
+.workout-summary-page {
+  display: flex;
+  justify-content: center;
+  background-color: var(--fs-bg);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.workout-summary-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── SUCCESS ICON ── */
+.summary-success-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -0.75rem;
+}
+
+.summary-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  /* Creates the light green background safely using only the allowed green variable */
+  background-color: color-mix(in srgb, var(--fs-green) 12%, transparent);
+  color: var(--fs-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── HEADER ── */
+.summary-header {
+  text-align: center;
+}
+
+.summary-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--fs-text);
+  font-family: 'Inter', serif;
+  letter-spacing: -0.5px;
+}
+
+.summary-header p {
+  margin: 0.35rem 0 0;
+  color: var(--fs-muted);
+  font-size: 0.9rem;
+}
+
+/* ── DARK STATS BOX ── */
+.summary-stats-box {
+  background-color: #1a1a1a; 
+  border-radius: 1rem;
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.summary-stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: #2a2a2a; 
+}
+
+.summary-stat strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f0f0f0; 
+  margin-bottom: 0.25rem;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.summary-stat strong small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #888888; 
+}
+
+.summary-stat span {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #888888; 
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.summary-pr-stat strong {
+  color: var(--fs-gold) !important;
+}
+
+/* ── PERSONAL RECORDS BOX ── */
+.summary-pr-box {
+  background-color: var(--fs-gold-bg);
+  border: 1px solid color-mix(in srgb, var(--fs-gold-dim) 30%, transparent);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.summary-pr-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--fs-gold-dim);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.summary-pr-header .trophy-icon {
+  color: var(--fs-gold-dim);
+}
+
+.summary-pr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.summary-pr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pr-exercise-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--fs-text);
+}
+
+.pr-record-value strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fs-text);
+}
+
+.pr-record-value small {
+  font-size: 0.85rem;
+  color: var(--fs-muted);
+  margin-left: 0.25rem;
+}
+
+/* ── EXERCISE BREAKDOWN BOX ── */
+.summary-breakdown-box {
+  background-color: var(--fs-surface);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--fs-shadow);
+}
+
+.summary-breakdown-header {
+  padding: 1.25rem 1.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fs-muted);
+  background-color: transparent;
+  border-bottom: 1px solid var(--fs-border);
+  letter-spacing: 0.5px;
+}
+
+.summary-breakdown-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-exercise-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--fs-border);
+}
+
+.summary-exercise-row:last-child {
+  border-bottom: none;
+}
+
+.summary-exercise-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-exercise-left strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--fs-text);
+}
+
+.summary-exercise-left span {
+  font-size: 0.75rem;
+  color: var(--fs-muted);
+}
+
+.summary-exercise-right strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fs-text);
+}
+
+/* ── DONE BUTTON ── */
+.summary-action-wrapper {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-done-button {
+  width: 100%;
+  background-color: var(--fs-gold);
+  color: var(--fs-bg);
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--fs-shadow);
+  transition: filter 0.2s ease;
+}
+
+.summary-done-button:hover {
+  filter: brightness(1.05);
+}

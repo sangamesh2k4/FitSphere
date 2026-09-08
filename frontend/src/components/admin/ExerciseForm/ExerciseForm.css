@@ -1,0 +1,404 @@
+/* ── EXERCISE FORM LAYOUT ── */
+.exercise-form-wrapper {
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  padding-bottom: 6rem; /* Extra space for the bottom nav on mobile */
+}
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--fs-gold);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.exercise-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── CARDS (SECTIONS) ── */
+.form-section-card {
+  background-color: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--fs-shadow);
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--fs-subtle);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--fs-border);
+}
+
+/* ── GRID & SPACING ── */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  width: 100%; /* row itself always spans the card */
+}
+
+@media (min-width: 768px) {
+  .form-row-2 {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+}
+
+.form-group-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--fs-muted, #6b7280);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  min-width: 0;   /* prevents a child (esp. select) from forcing the grid track wider than its column */
+  flex: 1;
+}
+
+.form-row-2 .form-group {
+  margin-bottom: 0;
+}
+
+.form-group-no-margin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ── INPUTS & LABELS ── */
+.input-label {
+  color: var(--fs-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  display: block;         /* selects default to inline-block, which ignores width in some browsers unless forced block */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* padding/border no longer add to the 100% width, so it can't overflow or under-fill its column */
+  background-color: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--fs-text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+/* Native <select> specific: strip the browser's intrinsic sizing and force it to fill its box */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238A887E' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 16px;
+  padding-right: 2.5rem; /* room for the custom chevron so text never sits under it */
+  cursor: pointer;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--fs-muted);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--fs-gold);
+  box-shadow: 0 0 0 2px var(--fs-gold-bg);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ── SECONDARY MUSCLES ── */
+/* ── SECONDARY MUSCLES ── */
+.secondary-muscles-empty-box {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--fs-surface-2);
+  border: 1px dashed var(--fs-border);
+  border-radius: 6px;
+  padding: 1rem;
+  color: var(--fs-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.secondary-muscles-grid {
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  /* Changed 'auto-fill' to 'auto-fit' so items stretch across the full width */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  background-color: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+  border-radius: 6px;
+  padding: 0.875rem;
+}
+
+/* Ensure the label itself spans the entire grid cell area */
+.muscle-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;          /* Occupies full cell width */
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem; /* Optional: adds clickable area so the whole box feels like a button */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--fs-text);
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.muscle-checkbox-label:hover {
+  background-color: var(--fs-surface); /* Gives a soft highlight on hover across the entire space */
+}
+
+/* Base Checkbox */
+/* Base Checkbox */
+.muscle-checkbox-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex-shrink: 0;
+
+  border: 1.5px solid var(--fs-border);
+  border-radius: 4px;
+  background-color: var(--fs-surface-2);
+
+  cursor: pointer;
+  position: relative;
+
+  transition: all 0.2s ease;
+}
+
+.muscle-checkbox-label input[type="checkbox"]:hover {
+  border-color: var(--fs-gold);
+}
+
+.muscle-checkbox-label input[type="checkbox"]:checked {
+  background-color: var(--fs-gold);
+  border-color: var(--fs-gold);
+}
+
+/* Perfectly Centered Tick Mark */
+.muscle-checkbox-label input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+
+  /* Position origin at dead center */
+  top: 45%; 
+  left: 50%;
+
+  width: 4px;
+  height: 8px;
+
+  border: solid var(--fs-bg);
+  border-width: 0 2px 2px 0;
+
+  /* Centers the rotated tick mark on both X and Y axes */
+  transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+  opacity: 0;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.2), opacity 0.2s ease;
+}
+
+.muscle-checkbox-label input[type="checkbox"]:checked::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+/* ── DYNAMIC LIST FIELDS (Instructions / Tips / Common Mistakes) ── */
+.dynamic-list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.dynamic-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-add-outline {
+  background: transparent;
+  border: 1px solid var(--fs-gold);
+  color: var(--fs-gold);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0; /* keeps the Add button from being squeezed by a long section label */
+}
+
+.btn-add-outline:hover {
+  background-color: var(--fs-gold-bg);
+}
+
+.empty-list-text {
+  color: var(--fs-muted);
+  font-size: 0.85rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.dynamic-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dynamic-list-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.step-number {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--fs-gold);
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 1.5rem;
+  flex-shrink: 0;
+
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  display: inline;
+  padding: 0;
+}
+
+/* the text input inside a dynamic-list-row needs to absorb all remaining row width,
+   not sit at its default intrinsic size next to the step number and remove button */
+.dynamic-list-row .form-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.btn-remove-icon {
+  background: transparent;
+  border: none;
+  color: var(--fs-muted);
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.btn-remove-icon:hover {
+  color: var(--fs-red-text);
+  background-color: var(--fs-red-bg);
+}
+
+/* ── ACTIONS FOOTER ── */
+.form-actions-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.btn-submit-primary {
+  background-color: var(--fs-gold);
+  color: var(--fs-bg);
+  border: 1px solid var(--fs-gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 2;
+}
+
+.btn-submit-primary:hover {
+  background-color: var(--fs-gold-dim);
+  border-color: var(--fs-gold-dim);
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: var(--fs-muted);
+  border: 1px solid var(--fs-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.btn-cancel:hover {
+  color: var(--fs-text);
+  background-color: var(--fs-surface-2);
+}
+
+.btn-toggle-status {
+  margin-left: auto;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-toggle-status.disable {
+  background-color: var(--fs-red-bg);
+  color: var(--fs-red-text);
+  border: 1px solid var(--fs-red);
+}
+
+.btn-toggle-status.disable:hover {
+  background-color: var(--fs-red);
+  color: var(--fs-bg);
+}
+
+.btn-toggle-status.enable {
+  background-color: var(--fs-surface-2);
+  color: var(--fs-green);
+  border: 1px solid var(--fs-green);
+}
+
+.btn-toggle-status.enable:hover {
+  background-color: var(--fs-green);
+  color: var(--fs-bg);
+}
