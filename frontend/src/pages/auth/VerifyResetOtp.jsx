@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react';
 import { authService } from '../../services/authService';
-import "../../styles/auth/auth.css";
+import "../../styles/auth/Auth.css";
 
 function VerifyResetOtp({ email, onSwitchToForgotPassword, onVerified }) {
   const [formData, setFormData] = useState({ 

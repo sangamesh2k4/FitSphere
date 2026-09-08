@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { authService } from '../../services/authService';
 import { validatePassword } from '../../utils/passwordValidator';
 import PasswordRequirements from '../../components/auth/PasswordRequirements';
-import "../../styles/auth/auth.css";
-
+import "../../styles/auth/Auth.css";
 function ResetPassword({  resetToken, onSuccessSwitchToLogin }) {
   const [formData, setFormData] = useState({ newPassword: '', confirmPassword: '' });
   const [error, setError] = useState(null);

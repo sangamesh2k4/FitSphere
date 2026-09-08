@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { authService } from '../../services/authService';
-import "../../styles/auth/auth.css";
-
+import "../../styles/auth/Auth.css";
 function ForgotPassword({ onSwitchToLogin, onCodeSent }) {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
