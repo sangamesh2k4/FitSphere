@@ -33,3 +33,6 @@ build/
 .vscode/
 .env
 node_modules/
+
+.env.local
+.env.*.local
