@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import App from "./App";
 
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/authContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { AuthModalProvider } from "./context/AuthModalContext";
 import { WorkoutProvider } from "./context/WorkoutContext";
