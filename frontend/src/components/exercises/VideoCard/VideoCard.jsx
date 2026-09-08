@@ -1,4 +1,4 @@
-import "./videoCard.css"
+import "./VideoCard.css"
 
 export function VideoCard({ video }) {
   if (!video) return null;

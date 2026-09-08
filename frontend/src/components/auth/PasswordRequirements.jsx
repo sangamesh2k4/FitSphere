@@ -1,5 +1,5 @@
 import { getPasswordStrength } from '../../utils/passwordValidator';
-import '../../css/PasswordRequirements.css';
+import '../../css/PassWordRequirements.css';
 
 function PasswordRequirements({ password }) {
   const criteria = getPasswordStrength(password);

@@ -1,4 +1,4 @@
-import "./FoodSearchBox.css";
+import "./foodSearchBox.css";
 
 export default function FoodSearchBox({ query, setQuery, onSearch, loading }) {
     return (
