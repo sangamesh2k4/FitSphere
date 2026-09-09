@@ -18,6 +18,8 @@ import DashboardConsistency
 
 import { analyticsService } from "../services/analyticsService";
 
+import LoadingSkeleton from "../components/skeleton/LoadingSkeleton/LoadingSkeleton";
+
 import "../css/Dashboard.css";
 
 
@@ -77,7 +79,7 @@ function Dashboard() {
 
             {loading && (
                 <div className="dashboard-loading">
-                    Loading metrics...
+                   { "Loading metrics..." && LoadingSkeleton }
                 </div>
             )}
 

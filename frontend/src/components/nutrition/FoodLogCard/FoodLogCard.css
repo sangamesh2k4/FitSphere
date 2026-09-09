@@ -23,6 +23,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    /* Allows this flex item to shrink so long text doesn't push buttons out */
+    min-width: 0; 
+    flex: 1;
+    padding-right: 1rem;
 }
 
 .food-left h3 {
@@ -32,6 +36,10 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    /* Truncate long food names */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .food-left p {
@@ -47,6 +55,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .food-calories {
@@ -90,4 +99,39 @@
     border-color: #ef4444;
     color: #ef4444;
     background: rgba(239, 68, 68, 0.08);
+}
+
+/* ==========================================
+   Mobile Responsiveness
+========================================== */
+@media (max-width: 576px) {
+    .food-card {
+        padding: 0.75rem 1rem; /* Reduce padding to save screen space */
+    }
+
+    .food-left h3 {
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+
+    .food-left p {
+        font-size: 0.8rem;
+    }
+
+    .food-right {
+        gap: 0.35rem; /* Tighter gap between calories and actions */
+    }
+
+    .food-calories {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.45rem;
+    }
+
+    .icon-btn {
+        padding: 0.3rem; /* Make tap targets slightly more compact */
+    }
+    
+    .icon-btn svg {
+        width: 16px;
+        height: 16px;
+    }
 }

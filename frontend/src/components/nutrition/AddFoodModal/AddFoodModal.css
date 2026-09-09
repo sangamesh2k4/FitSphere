@@ -18,6 +18,10 @@
     padding: 20px;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 .add-food-modal {
     width: min(700px, 100%);
     max-height: 90vh;
@@ -31,6 +35,7 @@
     z-index: 10000;
     
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 3px;
 }
 
 .modal-header {
@@ -38,7 +43,7 @@
     align-items: center;
     justify-content: space-between;
     
-    padding: 24px 30px 16px;
+    padding: 5px 10px 12px;
     background: var(--fs-surface);
     border-bottom: 1px solid var(--fs-border);
 }
@@ -52,6 +57,7 @@
     background: transparent;
     border: none;
     font-size: 1.5rem;
+    margin-left:150px;
     color: var(--fs-muted);
     cursor: pointer;
     transition: color 0.2s;

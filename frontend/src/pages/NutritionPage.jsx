@@ -19,6 +19,7 @@ export default function NutritionPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [profileIncomplete, setProfileIncomplete] = useState(false);
+    const [deleteFoodId, setDeleteFoodId] = useState(null);
 
     const [summary, setSummary] = useState({
         consumedCalories: 0,
@@ -31,9 +32,9 @@ export default function NutritionPage() {
         targetFat: 0,
     });
 
-    // Disable scrolling when any modal (profile overlay or add food modal) is open
+    // Disable scrolling when any modal is open
     useEffect(() => {
-        if (profileIncomplete || isAddFoodOpen) {
+        if (profileIncomplete || isAddFoodOpen || Boolean(deleteFoodId)) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "auto";
@@ -43,7 +44,7 @@ export default function NutritionPage() {
         return () => {
             document.body.style.overflow = "auto";
         };
-    }, [profileIncomplete, isAddFoodOpen]);
+    }, [profileIncomplete, isAddFoodOpen, deleteFoodId]);
 
     const handleAddFood = (mealType) => {
         setEditingFood(null);
@@ -58,18 +59,7 @@ export default function NutritionPage() {
     };
 
     const handleDeleteFood = async (id) => {
-
-        if (!window.confirm("Are you sure you want to delete this food?")) {
-            return;
-        }
-
-        try {
-            await nutritionService.deleteFoodLog(id);
-            await loadNutritionData();
-        } catch (error) {
-            console.error("Failed to delete food", error);
-            setError("Unable to delete food.");
-        }
+        setDeleteFoodId(id);
     };
 
     const loadNutritionData = async () => {
@@ -197,6 +187,50 @@ export default function NutritionPage() {
 
                     </div>
 
+                </div>
+            )}
+
+            {deleteFoodId && (
+                <div className="nutrition-profile-overlay">
+                    <div className="nutrition-profile-modal">
+
+                        <div className="nutrition-profile-icon">
+                            🗑️
+                        </div>
+
+                        <h2>Delete food?</h2>
+
+                        <p>
+                            Are you sure you want to delete this food entry?
+                        </p>
+
+                        <button
+                            type="button"
+                            className="nutrition-profile-primary"
+                            onClick={async () => {
+                                try {
+                                    await nutritionService.deleteFoodLog(deleteFoodId);
+                                    setDeleteFoodId(null);
+                                    await loadNutritionData();
+                                } catch (error) {
+                                    console.error("Failed to delete food", error);
+                                    setError("Unable to delete food.");
+                                    setDeleteFoodId(null);
+                                }
+                            }}
+                        >
+                            Delete
+                        </button>
+
+                        <button
+                            type="button"
+                            className="nutrition-profile-secondary"
+                            onClick={() => setDeleteFoodId(null)}
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
                 </div>
             )}
         </div>

@@ -14,6 +14,8 @@
     transition: .25s;
     width: 100%;
     text-align: left;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .food-card-body {
@@ -22,6 +24,7 @@
     gap: 1rem;
     flex: 1;
     cursor: pointer;
+    min-width: 0; /* Prevents text overflow from pushing actions out */
 }
 
 .food-card:hover:not(.disabled) {
@@ -57,14 +60,23 @@
 
 .food-card-info {
     flex: 1;
+    min-width: 0;
+    /* remove width: 100% — it fights flex:1 and can overflow into actions */
 }
 
 .food-card-name {
-    overflow: hidden;
     line-height: 1.35;
     min-height: 2.8rem;
     color: var(--fs-text);
     font-weight: 700;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    /* clamp to 2 lines instead of letting long titles like       "STRBK CB COCO CHC PBO, 32 FL OZ..." push into actions */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .food-card-details {
@@ -101,6 +113,8 @@
     color: var(--fs-muted);
     transition: .2s;
     flex-shrink: 0;
+    /* guarantee this column can never be squeezed to zero/overlap */
+    min-width: 36px;
 }
 
 .food-card:hover:not(.disabled) .food-card-actions {
@@ -109,11 +123,10 @@
 
 /* Favorite Button Styles */
 .favorite-button {
+    position: static; /* Reset to static for proper layout in the actions column */;
     width: 36px;
     height: 36px;
     border: none;
-    background: transparent;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,4 +142,56 @@
 
 .favorite-button.active {
     color: #ef4444;
+}
+
+/* ==========================================
+   Mobile Responsiveness
+========================================== */
+@media (max-width: 576px) {
+    .food-card {
+        padding: 0.85rem;
+        gap: 0.75rem;
+    }
+
+    .food-card-body {
+        gap: 0.75rem;
+    }
+
+    .food-card-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .food-card-name {
+        font-size: 0.95rem;
+        min-height: auto; /* Let the height wrap naturally on mobile */
+        margin-bottom: 0.25rem;
+    }
+
+    .food-card-details {
+        margin-top: 0.4rem;
+        font-size: 0.75rem;
+        gap: 0.4rem;
+    }
+
+    .food-detail-label {
+        font-size: 0.7rem;
+    }
+
+    .food-card-actions {
+        gap: 0.5rem;
+    }
+
+    .favorite-button {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Slightly scale down icons inside the actions wrapper */
+    .food-card-actions svg, 
+    .favorite-button svg {
+        width: 18px;
+        height: 18px;
+    }
 }
