@@ -23,6 +23,7 @@ import org.springframework.stereotype.Service;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -55,7 +56,7 @@ public class WorkoutServiceImpl implements WorkoutService {
         WorkoutSession workoutSession = new WorkoutSession();
         workoutSession.setUser(user);
         workoutSession.setName(request.getName().trim());
-        workoutSession.setStartedAt(LocalDateTime.now());
+        workoutSession.setStartedAt(LocalDateTime.now(ZoneId.of("Asia/Kolkata")));
         WorkoutSession savedSession = workoutSessionRepository.save(workoutSession);
         return workoutMapper.toSessionResponseDto(savedSession);
     }
