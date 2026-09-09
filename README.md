@@ -56,9 +56,9 @@ A separate `ROLE_ADMIN` area provides administration and support tools.
 |-----------------------------------------|---|
 | ![FitSphere Home](screenshots/hero.png) | ![HealthAssessment](screenshots/healthassessment.png) |
 
-| Macro Tracker                                   | Exercise Library |
-|-------------------------------------------------|---|
-| ![Macro Tracker](screenshots/MacrotTracker.png) | ![Exercise Library](screenshots/explore-exercises.png) |
+| Macro Tracker                                  | Exercise Library |
+|------------------------------------------------|---|
+| ![Macro Tracker](screenshots/MacroTracker.png) | ![Exercise Library](screenshots/explore-exercises.png) |
 
 ### Exercise Details
 
