@@ -36,7 +36,16 @@ function StartWorkoutModal({ onClose }) {
     setError(null)
 
     try {
-      const response = await workoutService.startWorkout({ name: workoutName.trim() })
+      const now = new Date();
+
+const startedAt =
+    `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}T` +
+    `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
+
+const response = await workoutService.startWorkout({
+    name: workoutName.trim(),
+    startedAt
+});
       onClose()
       navigate(`/workouts/${response.id}/active`)
     } catch (err) {

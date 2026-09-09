@@ -34,6 +34,7 @@ function ActiveWorkoutScreen({ workout }) {
             });
         });
 
+
         return {
             totalVolume: volume,
             totalSets: sets
@@ -50,11 +51,15 @@ function ActiveWorkoutScreen({ workout }) {
             return;
         }
 
-        const updateTimer = () => {
-            const now = Date.now();
-            const elapsedSeconds = Math.max(0, Math.floor((now - startTime) / 1000));
-            setElapsedTime(formatElapsedTime(elapsedSeconds));
-        };
+       const updateTimer = () => {
+    const now = Date.now();
+    const elapsedSeconds = Math.max(
+        0,
+        Math.floor((now - startTime) / 1000)
+    );
+
+    setElapsedTime(formatElapsedTime(elapsedSeconds));
+};
 
         updateTimer();
         const timer = setInterval(updateTimer, 1000);
