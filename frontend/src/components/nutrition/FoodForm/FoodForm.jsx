@@ -63,14 +63,14 @@ export default function FoodForm({
                         <label htmlFor="food-unit">Unit</label>
                         <div className="select-wrapper">
                             <CustomSelect
-                                id="food-unit"
+                                name="food-unit"
                                 value={unit}
-                                onChange={setUnit}
+                                onChange={(e) => setUnit(e.target.value)}
                                 disabled={saving}
                                 options={[
-                                    { value: 'g', label: 'g' },
-                                    { value: 'ml', label: 'ml' },
-                                    { value: 'pcs', label: 'pcs' },
+                                    { value: "g", label: "g" },
+                                    { value: "ml", label: "ml" },
+                                    { value: "pcs", label: "pcs" },
                                 ]}
                             />
                         </div>
@@ -81,15 +81,15 @@ export default function FoodForm({
                         <label htmlFor="food-meal">Meal</label>
                         <div className="select-wrapper">
                             <CustomSelect
-                                id="food-meal"
+                                name="food-meal"
                                 value={mealType}
-                                onChange={setMealType}
+                                onChange={(e) => setMealType(e.target.value)}
                                 disabled={saving}
                                 options={[
-                                    { value: 'BREAKFAST', label: 'Breakfast' },
-                                    { value: 'LUNCH', label: 'Lunch' },
-                                    { value: 'DINNER', label: 'Dinner' },
-                                    { value: 'SNACK', label: 'Snack' },
+                                    { value: "BREAKFAST", label: "Breakfast" },
+                                    { value: "LUNCH", label: "Lunch" },
+                                    { value: "DINNER", label: "Dinner" },
+                                    { value: "SNACK", label: "Snack" },
                                 ]}
                             />
                         </div>
